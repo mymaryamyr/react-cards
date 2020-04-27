@@ -1,0 +1,7 @@
+.landing {
+    border: 1px solid gray;
+    max-width: 1000px;
+    padding: 20px 40px;
+    text-align: center;
+    margin: 10px auto;
+}

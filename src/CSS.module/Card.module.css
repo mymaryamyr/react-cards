@@ -1,0 +1,23 @@
+
+.card {
+    border: 1px solid gray;
+    width: 320px;
+    display: inline-block;
+    padding: 20px;
+    text-align: center;
+    margin: 5px;
+}
+.card:hover {
+    background-color: #6eb997;
+    cursor: pointer;
+}
+.a {
+    text-decoration: none;
+}
+.li {
+    display: inline;
+}
+.ul {
+    padding: 0;
+}
+

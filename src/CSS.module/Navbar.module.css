@@ -1,0 +1,32 @@
+.navbar {
+    font-size: 16px;
+    color: #333333;
+    background-color: #b4b3b3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.navbar li {
+    background-color: #f3f4f4;
+    line-height: 35px;
+    flex: 0 1 150px;
+    margin: 10px;
+    cursor: pointer;
+    border: 1px solid #b4b3b3;
+    border-radius: 8px;
+}
+.navbar a {
+    text-decoration: none;
+    display: block;
+}
+.navbar li:hover {
+    background-color: #56b68b;
+}
+.navbar li:hover a{
+    color: white;
+}
+.span {
+    position: absolute;
+    top: 34px;
+    left: 115px;
+}
