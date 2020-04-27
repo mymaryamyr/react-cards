@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/react-cards/static/css/main.886470db.chunk.css",
+    "main.js": "/react-cards/static/js/main.c3808904.chunk.js",
+    "main.js.map": "/react-cards/static/js/main.c3808904.chunk.js.map",
+    "runtime-main.js": "/react-cards/static/js/runtime-main.5fcf487e.js",
+    "runtime-main.js.map": "/react-cards/static/js/runtime-main.5fcf487e.js.map",
+    "static/js/2.3edaf8cb.chunk.js": "/react-cards/static/js/2.3edaf8cb.chunk.js",
+    "static/js/2.3edaf8cb.chunk.js.map": "/react-cards/static/js/2.3edaf8cb.chunk.js.map",
+    "index.html": "/react-cards/index.html",
+    "precache-manifest.33f8b50947abc62dfc15c19be18c30f1.js": "/react-cards/precache-manifest.33f8b50947abc62dfc15c19be18c30f1.js",
+    "service-worker.js": "/react-cards/service-worker.js",
+    "static/css/main.886470db.chunk.css.map": "/react-cards/static/css/main.886470db.chunk.css.map",
+    "static/js/2.3edaf8cb.chunk.js.LICENSE.txt": "/react-cards/static/js/2.3edaf8cb.chunk.js.LICENSE.txt",
+    "static/media/safron.png": "/react-cards/static/media/safron.4f68900b.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.5fcf487e.js",
+    "static/js/2.3edaf8cb.chunk.js",
+    "static/css/main.886470db.chunk.css",
+    "static/js/main.c3808904.chunk.js"
+  ]
+}
