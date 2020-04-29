@@ -6,13 +6,8 @@ import {
   Link
 } from "react-router-dom";
 import './App.css';
-import Listing from './Components/Shopping/Listing';
-import AboutUs from './Components/AboutUs';
 import Navbar from './Components/Navbar';
-import Yalda from './Components/Layouts/landing/Yalda';
-import Register from './Components/Register';
-import Product from './Components/Shopping/Product'
-import Basket from './Components/Shopping/Basket';
+import routes from './config/routes';
 
 
 
@@ -21,20 +16,20 @@ function App() {
     <Router>
       <div>
         <Navbar>
-            <li><Link to="/listing">Listing</Link></li>
-            <li><Link to="/about-us">About Us</Link></li>
-            <li><Link to="/yalda">Landing</Link></li>
-            <li><Link to="/register">Register/Logout</Link></li>
-            <li><Link to="/basket">Basket</Link></li>
+            <li><Link to={routes.listing.path}>Listing</Link></li>
+            <li><Link to={routes.aboutUs.path}>About Us</Link></li>
+            <li><Link to={routes.landing.path}>Landing</Link></li>
+            <li><Link to={routes.register.path}>Register/Logout</Link></li>
+            <li><Link to={routes.basket.path}>Basket</Link></li>
         </Navbar>
 
         <Switch>
-          <Route path="/listing" component={Listing} />
-          <Route path="/about-us" component={AboutUs} />
-          <Route path="/product/:id" component={Product} />
-          <Route path="/yalda" component={Yalda} />
-          <Route path="/register" component={Register} />
-          <Route path="/basket" component={Basket} />
+          <Route path={routes.listing.path} component={routes.listing.component} />
+          <Route path={routes.aboutUs.path} component={routes.aboutUs.component} />
+          <Route path={routes.product.path} component={routes.product.component} />
+          <Route path={routes.landing.path} component={routes.landing.component} />
+          <Route path={routes.register.path} component={routes.register.component} />
+          <Route path={routes.basket.path} component={routes.basket.component} />
         </Switch>
       </div>
   </Router>

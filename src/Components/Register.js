@@ -5,17 +5,29 @@ import { Redirect } from 'react-router-dom';
 class Register extends Component {
     constructor(props) {
         super(props);
-        this.handleSignUp = this.handleSignUp.bind(this);
         this.state = {
             inputs: {
                 name: '',
                 mobile: ''
             },
-            errors: {},
+            errors: "",
+            local: ""
         };
-        this.handleSignUp = this.handleSignUp.bind(this)
-        this.handleValidation = this.handleValidation.bind(this)
-        this.handleChange = this.handleChange.bind(this)
+    }
+    Logout = () => {
+        localStorage.clear()
+        this.setState({local: false});
+    }
+    SignIn = (e) => {
+        e.preventDefault();
+       if(this.handleValidation()) {
+            localStorage.setItem("username", this.state.inputs["name"])
+            alert(`${this.state.inputs["name"]} is sigend up!`)
+            this.setState({local: true});
+        } else {
+            alert(this.state.errors)
+        }
+
     }
     componentDidMount() {
         this.input.focus();
@@ -23,80 +35,73 @@ class Register extends Component {
     render () {
         return  (
             <form className={s.form}>
-                <input 
-                    className={s.input} 
-                    type="text" 
-                    onChange={this.handleChange.bind(this, "name")}
-                    ref={(node) => {this.input = node; }} 
-                    value={this.state.inputs["name"]} 
-                    placeholder="نام خود را وارد کنید" 
-                />
-                <input 
-                className={s.input} 
-                onChange={this.handleChange.bind(this, "mobile")} 
-                value={this.state.inputs["mobile"]} 
-                placeholder="شماره موبایل خود را وارد کنید" 
-                />
-                <button 
-                className={s.button} 
-                type="submit" 
-                onClick={this.handleSignUp}>
-                ثبت شماره موبایل
-                </button>
-                <Logout></Logout>
+                {this.state.local ? 
+                    <button 
+                        className={`${s.button} ${s.red}`} 
+                        onClick={this.Logout}
+                    >
+                        خروج از حساب کاربری
+                    </button> 
+                : 
+                    <div>
+                        <input 
+                            className={s.input} 
+                            type="text" 
+                            onChange={(e) => (this.handleChange(e, "name"))}
+                            ref={(node) => {this.input = node; }} 
+                            placeholder="نام خود را وارد کنید" 
+                        />
+                        <input 
+                            className={s.input} 
+                            onChange={(e) => (this.handleChange(e, "mobile"))}
+                            placeholder="شماره موبایل خود را وارد کنید" 
+                        />                
+                        <button 
+                            className={s.button} 
+                            type="submit" 
+                            onClick={this.SignIn}
+                        >
+                            ثبت شماره موبایل
+                        </button>                
+                    </div>
+                }
             </form>
         )
     }
-    handleValidation () {
+    handleValidation = () => {
         let formIsValid = true;
-        /*{
-        let inputs = {};
-        let errors = {};
+        let { inputs, errors } = this.state;
         if(!inputs["name"]){
             formIsValid = false;
-            errors["name"] = "Cannot be empty";
+            errors = "Cannot be empty";
          }
         if(typeof inputs["name"] !== "undefined") {
             if(!inputs["name"].match(/^[a-zA-Z]+$/)) {
                 formIsValid = false;
-                errors["name"] = "name is unvalid";
+                errors = "name is invalid";
             }
         } 
-        this.setState({errors: errors});
-        }*/
+        if(!inputs["mobile"]){
+            formIsValid = false;
+            errors = "Cannot be empty";
+        }
+        if(typeof inputs["mobile"] !== "undefined") {
+            if(!inputs["mobile"].match(/09\d{7}/)) {
+                formIsValid = false;
+                errors = "mobile is invalid";
+            }
+        } 
+        this.setState({errors});
         return formIsValid;
     }
-    handleChange(input, e) {
-        let inputs = this.state.inputs;
-
-        inputs[input] = e.target.value;
-        this.setState({inputs})
-    }
-    handleSignUp (e) {
-        e.preventDefault();
-        let loginStorage = localStorage.setItem("username", this.state.inputs["name"])
-        if(this.handleValidation()) {
-            alert(`${this.state.inputs["name"]} is sigend up!`)
-        } else {
-            alert("Has Errors!")
-        }
-    }
-}
-class Logout extends Component {
-    state = {
-        navigate: false
-    };
-    Logout = () => {
-        localStorage.clear()
-        this.setState({navigate: true});
-    }
-    render() {
-        const { navigate } = this.state;
-
-        if (navigate) {
-            return <Redirect to="/listing" push={true} />;
-        }
-        return <button className={`${s.button} ${s.red}`} onClick={this.Logout}>خروج از حساب کاربری</button>
+    handleChange = (e, input) => {
+        let { value } = e.target;
+        this.setState({
+            inputs: {
+                ...this.state.inputs,
+                [input] : value
+            }
+        })
     }
 }
 
