@@ -17,12 +17,32 @@ class Register extends Component {
         this.handleValidation = this.handleValidation.bind(this)
         this.handleChange = this.handleChange.bind(this)
     }
+    componentDidMount() {
+        this.input.focus();
+    }
     render () {
         return  (
             <form className={s.form}>
-                <input className={s.input} type="text" onChange={this.handleChange.bind(this, "name")} value={this.state.inputs["name"]} placeholder="نام خود را وارد کنید" />
-                <input className={s.input} onChange={this.handleChange.bind(this, "mobile")} value={this.state.inputs["mobile"]} placeholder="شماره موبایل خود را وارد کنید" />
-                <button className={s.button} type="submit" onClick={this.handleSignUp}>ثبت شماره موبایل</button>
+                <input 
+                    className={s.input} 
+                    type="text" 
+                    onChange={this.handleChange.bind(this, "name")}
+                    ref={(node) => {this.input = node; }} 
+                    value={this.state.inputs["name"]} 
+                    placeholder="نام خود را وارد کنید" 
+                />
+                <input 
+                className={s.input} 
+                onChange={this.handleChange.bind(this, "mobile")} 
+                value={this.state.inputs["mobile"]} 
+                placeholder="شماره موبایل خود را وارد کنید" 
+                />
+                <button 
+                className={s.button} 
+                type="submit" 
+                onClick={this.handleSignUp}>
+                ثبت شماره موبایل
+                </button>
                 <Logout></Logout>
             </form>
         )

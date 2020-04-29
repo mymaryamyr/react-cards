@@ -3,13 +3,8 @@
     border: 1px solid gray;
     width: 320px;
     display: inline-block;
-    padding: 20px;
     text-align: center;
     margin: 5px;
-}
-.card:hover {
-    background-color: #6eb997;
-    cursor: pointer;
 }
 .a {
     text-decoration: none;
@@ -19,5 +14,65 @@
 }
 .ul {
     padding: 0;
+}
+.button {
+    background-color: #56b68b;
+    line-height: 35px;
+    margin: 10px;
+    border: 1px solid #b4b3b3;
+    border-radius: 8px;
+    font-size: 20px;
+    width: 150px;
+    padding: 0;
+}
+.button:hover {
+    background-color: #f3f4f4;
+    cursor: pointer;
+    color: #333333;
+}
+.link{
+    color: white;
+    text-decoration: none;
+    display: block;
+}
+.link:hover {
+    color: #333333;
+}
+
+.footer {
+    background-color: #c2c2c2;
+    display: flex;
+    height: 70px;
+}
+.img {
+    display: inline-block;
+    max-width: 50px;
+    height: 50px;
+    margin: auto 5px;
+    flex: 2 1 40px;
+    flex-flow: nowrap;
+}
+.footer > p{
+    display: inline;
+}
+.name {
+    flex: 3 1 60px;
+    margin: auto;
+}
+.tree {
+    color: green;
+    margin: auto 5px;
+    font-size: 28px;
+    flex: 1 1 20px;
+}
+.poison {
+    color: red;
+    margin: auto 5px;
+    font-size: 28px;
+    flex: 1 1 20px;
+}
+.score {
+    flex: 1 1 20px;
+    margin: auto;
 }
 

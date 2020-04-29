@@ -2,6 +2,7 @@ body {
   direction: rtl;
   margin: auto;
   text-align: center;
+  box-sizing: border-box;
 }
 li {
   list-style-type: none;

@@ -1,30 +1,33 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { fas } from '@fortawesome/free-solid-svg-icons';
+import { faSpinner } from '@fortawesome/free-solid-svg-icons';
+import s from "../../CSS.module/Basket.module.css"
 
 
 class Basket extends Component {
-        constructor(props) {
-            super(props) 
-            this.state = {
-                error: null,
-                isLoaded: false,
-                page: []
-            }
+    constructor(props) {
+        super(props) 
+        this.state = {
+            error: null,
+            isLoading: false,
+            page: []
         }
-
+    }
     componentDidMount () {
         fetch("https://hn.algolia.com/api/v1/search?query=redux")
         .then(res => res.json())
         .then(
             (result) => {
                 this.setState({
-                    isLoaded: true,
+                    isLoading: true,
                     page: result.page
                 })
             },
             (error) => {
                 this.setState({
-                    isLoaded: true,
+                    isLoading: true,
                     error
                 })
             }
@@ -36,11 +39,14 @@ class Basket extends Component {
     
     }
     render () {
-        const {isLoaded, error, page} = this.state
+        const {isLoading, error, page} = this.state
         if(error) {
             return <p>Error: {error.message}</p>
-        } else if(!isLoaded) {
-            return <p>Loading ...</p>
+        } else if(!isLoading) {
+            return <div>
+                        <span>درحال بارگذاری</span>
+                        <FontAwesomeIcon className={s.icon} icon={fas, faSpinner} />    
+                    </div>
         } else {
             return (
                 <div>

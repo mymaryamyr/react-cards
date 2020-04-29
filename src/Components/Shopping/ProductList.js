@@ -1,14 +1,7 @@
 import React, { Component, PropTypes} from 'react';
 import ProductCard from './ProductCard';
 import styles from '../../CSS.module/Card.module.css';
-import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect,
-    withRouter
-  } from "react-router-dom";
+
 
 class ProductList extends Component {
     constructor (props) {
@@ -75,9 +68,7 @@ class ProductList extends Component {
     createListItem (product) {
         return (
             <li className={styles.li} key={product.id}>
-                <Link to={'/product/' + product.id}>
-                    <ProductCard product={product} />
-                </Link>  
+                <ProductCard product={product} />
             </li>  
         )
     }
