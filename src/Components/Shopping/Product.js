@@ -13,8 +13,8 @@ import ProductCard from './ProductCard';
 import list from '../../data.json'
 
 
-
 class Product extends Component {
+
     increment = () => {
         this.props.dispatch({ type: 'INCREMENT' });
     }

@@ -7,16 +7,17 @@ import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
 
-const initialState = {
+const initialState1 = {
   count: 0
 };
 
-function reducer(state = initialState, action) {
+function reducer(state = initialState1, action) {
   if(action.type === "INCREMENT") {
     return {
       count: state.count + 1
     };
   }
+
   return state;
 }
 

@@ -51,11 +51,7 @@ class Basket extends Component {
             return (
                 <div>
                     <p>{this.props.count}</p>
-                    <ul>
-                    <li>
-                        {page.title}
-                    </li>
-                    </ul>
+
                 </div>
             )
         }
