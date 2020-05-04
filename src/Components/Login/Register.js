@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import s from '../CSS.module/Form.module.css'
-import { Redirect } from 'react-router-dom';
+import s from '../../CSS.module/Form.module.css'
 
 class Register extends Component {
     constructor(props) {
@@ -11,19 +10,19 @@ class Register extends Component {
                 mobile: ''
             },
             errors: "",
-            local: ""
+            login: false
         };
     }
     Logout = () => {
         localStorage.clear()
-        this.setState({local: false});
+        this.setState({login: false});
     }
     SignIn = (e) => {
         e.preventDefault();
        if(this.handleValidation()) {
             localStorage.setItem("username", this.state.inputs["name"])
             alert(`${this.state.inputs["name"]} is sigend up!`)
-            this.setState({local: true});
+            this.setState({login: true});
         } else {
             alert(this.state.errors)
         }
@@ -35,7 +34,7 @@ class Register extends Component {
     render () {
         return  (
             <form className={s.form}>
-                {this.state.local ? 
+                {this.state.login ? 
                     <button 
                         className={`${s.button} ${s.red}`} 
                         onClick={this.Logout}

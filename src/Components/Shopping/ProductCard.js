@@ -23,7 +23,7 @@ function ProductCard(props) {
             <p>product_name: {props.product.product_name}</p>
             <p>weight: {props.product.weight}</p>
             <p>price: {props.product.price}</p>
-            <button onClick={props.onClick} className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>مشاهده</Link></button>
+            <button onClick={props.onClick} className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>{props.ShowBuy ? "خرید" : "مشاهده"}</Link></button>
             <div className={s.footer}>
                 <img className={s.img} src={props.product.farmer_thumb} alt="farmer in the land"></img>
                 <p className={s.name}>{props.product.farmer_name}</p>

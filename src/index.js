@@ -2,27 +2,43 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import { createStore } from 'redux';
+import { createStore, combineReducers } from 'redux';
 import { Provider } from 'react-redux';
 import * as serviceWorker from './serviceWorker';
 
 
-const initialState1 = {
-  count: 0
+const initialState = {
+  count: 0,
+  items: []
 };
 
 
-function reducer(state = initialState1, action) {
-  if(action.type === "INCREMENT") {
-    return {
-      count: state.count + 1
-    };
+const increment = (state = initialState, action)  => {
+  switch (action.type) {
+    case  "INCREMENT":
+      return {
+        count: state.count + 1
+      }
+    default:
+      return state
   }
-
-  return state;
+}
+const addId = (state = initialState, action)  => {
+  switch (action.type) {
+    case "ADDID":
+      return Object.assign({} , state, {
+        items : [...state.items,action.id]
+      })
+    default:
+      return state
+  }
 }
 
-const store = createStore(reducer);
+combineReducers({ increment, addId})
+
+const store = createStore(addId);
+
+console.log(store.getState())
 
 ReactDOM.render(
   <Provider store={store}>
