@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import s from "../../CSS.module/Basket.module.css"
+import { store } from '../..';
 
 
 class Basket extends Component {
@@ -51,7 +52,6 @@ class Basket extends Component {
             return (
                 <div>
                     <p>{this.props.count}</p>
-
                 </div>
             )
         }
@@ -62,5 +62,7 @@ function mapStateToProps(state) {
       count: state.count
     };
 }
+
+
 
 export default connect(mapStateToProps)(Basket);

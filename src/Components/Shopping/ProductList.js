@@ -68,7 +68,9 @@ class ProductList extends Component {
     createListItem (product) {
         return (
             <li className={styles.li} key={product.id}>
-                <ProductCard product={product} />
+                <ProductCard 
+                    product={product}
+                />
             </li>  
         )
     }

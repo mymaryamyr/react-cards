@@ -30,7 +30,9 @@ function App(props) {
             <LayoutMainRoot path={routes.product.path} component={routes.product.component} />
             <LayoutMainRoot path={routes.register.path} component={routes.register.component} />
             <LayoutMainRoot path={routes.login.path} component={routes.login.component} />
+            
             <PrivateRoute path={routes.basket.path} component={routes.basket.component} />
+
             <LayoutLandingRoot path={routes.landing.path} component={routes.landing.component} />
         </Switch>
     </Router>

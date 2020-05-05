@@ -36,7 +36,7 @@ const addId = (state = initialState, action)  => {
 
 combineReducers({ increment, addId})
 
-const store = createStore(addId);
+export const store = createStore(increment);
 
 console.log(store.getState())
 

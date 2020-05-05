@@ -4,10 +4,7 @@ import routes from '../config/routes';
 import { connect } from 'react-redux';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect
+    Link
   } from "react-router-dom";
 
 
