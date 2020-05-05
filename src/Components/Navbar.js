@@ -6,15 +6,16 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
+import store from './store';
+import { addArticle } from './actions';
 
 
 class Navbar extends Component {
-    increment = () => {
-        this.props.dispatch({ type: 'INCREMENT' });
-    
-    }
-    addId = () => {
-        this.props.dispatch({ type: 'AddId' });
+    constructor (props) {
+        super(props);
+        this.state = {
+            id: ""
+        }
     }
     render () {
         return (
@@ -25,17 +26,12 @@ class Navbar extends Component {
                     <li><Link to={routes.register.path}>Register/Logout</Link></li>
                     <li><Link to={routes.basket.path}>Basket</Link></li>
                 </ul>
-                <span className={s.span}>{this.props.count}</span>
-                <span className={s.span}>{this.props.items}</span>
+                <span></span>
             </div>
     
         )
     }
 }
-function mapStateToProps(state) {
-    return {
-      count: state.count,
-      items: state.items
-    };
-}
-export default connect(mapStateToProps)(Navbar);
+
+
+export default (Navbar);

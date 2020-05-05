@@ -46,6 +46,7 @@
     "@babel/preset-env": "^7.9.5",
     "@babel/preset-react": "^7.9.4",
     "gh-pages": "^2.2.0",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "redux-thunk": "^2.3.0"
   }
 }

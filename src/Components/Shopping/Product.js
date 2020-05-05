@@ -1,39 +1,43 @@
 import React, {Component} from 'react';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect,
     withRouter,
-    useParams
 } from "react-router-dom";
 import { connect } from 'react-redux';
 import ProductCard from './ProductCard';
 import list from '../../data.json'
+import { addArticle } from "../actions/index";
+import store from '../store';
 
 
 class Product extends Component {
-
-    increment = () => {
-        this.props.dispatch({ type: 'INCREMENT' });
+    constructor(props) {
+        super(props);
+        this.state = {
+            id: this.props.match.params.id
+        }
+        this.handleClick = this.handleClick.bind(this)
     }
-    addId = () => {
-        this.props.dispatch({  type: 'ADDID',
-        items: 3 })
+    handleClick () {
+        const { id } = this.state
+        this.props.addArticle( {id} );
     }
     render() {
         const id = this.props.match.params.id;
         return (
-            <ProductCard onClick={() => { {this.increment()}; {this.addId()}; }} product={list.find(item => item.id == id)} ShowBuy/>
+            <ProductCard 
+                onClick={this.handleClick} 
+                product={list.find(item => item.id == id)} 
+                ShowBuy
+            />
         )
     }    
 }
 
-function mapStateToProps(state) {
+function mapDispatchToProps(dispatch) {
     return {
-      count: state.count,
-      items: state.items
+      addArticle: article => dispatch(addArticle(article))
     };
-}
-export default withRouter(connect(mapStateToProps)(Product))
+
+  }
+export default withRouter(connect(null, mapDispatchToProps)(Product))
