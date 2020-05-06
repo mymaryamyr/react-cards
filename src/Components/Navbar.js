@@ -26,12 +26,19 @@ class Navbar extends Component {
                     <li><Link to={routes.register.path}>Register/Logout</Link></li>
                     <li><Link to={routes.basket.path}>Basket</Link></li>
                 </ul>
-                <span></span>
+                <span>{this.props.count}</span>
             </div>
     
         )
     }
 }
 
+function mapStateToProps(state) {
+    return {
+      count: state.count
+    };
+}
 
-export default (Navbar);
+
+
+export default connect(mapStateToProps)(Navbar);

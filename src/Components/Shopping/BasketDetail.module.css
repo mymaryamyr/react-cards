@@ -1,4 +1,22 @@
 .table {
-    margin: 20px;
     padding: 20px;
+    width: 850px;
+    margin: auto;
+    margin-top: 20px;
+    border: 1px solid olive;
+}
+.img {
+    max-width: 50px;
+}
+.table > tr {
+    height: 30px;
+}
+.empty {
+    margin: 20px;
+}
+.input {
+    height: 25px;
+}
+.inputBtn {
+    height: 31px;
 }
