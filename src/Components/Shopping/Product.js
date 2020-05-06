@@ -40,6 +40,7 @@ class Product extends Component {
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),
+      increment: count => dispatch(increment(count))
     };
 
 }

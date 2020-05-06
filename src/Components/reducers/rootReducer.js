@@ -1,3 +1,5 @@
+import { combineReducers } from "redux";
+
 const ADD_ITEM = "ADD_ITEM"
 
 const initialState = {
