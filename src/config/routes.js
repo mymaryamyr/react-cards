@@ -10,7 +10,7 @@ import LoginPage from "../Components/Login/LoginPage";
 const routes = {
     home: {
         title: "home",
-        path: "/",
+        path: "/react-cards",
         component: Home
     },
     listing: {

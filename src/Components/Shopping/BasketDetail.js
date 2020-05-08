@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import {
     BrowserRouter as Router,
     Link,
@@ -8,24 +8,29 @@ import s from './BasketDetail.module.css'
 
 function BasketDetail(props) {
     return (
-            <tr className={s.tr}>
-                    <td>
-                        <Link to={"/product/" + props.id}>
-                            <img class={s.img} src={props.product.product_thumb_url} alt="Saffron"></img>
-                        </Link>
-                    </td>
-                    <td>
-                        <p>{props.product.id}</p>
-                    </td>
-                    <td>
-                        <p>{props.product.price}</p>
-                    </td>
-                    <td>
-                        <button onClick={onclick}>
-                        حذف
-                        </button>
-                    </td>
-            </tr>
+            <tbody>
+                <tr className={s.tr}>
+                        <td> 
+                            <Link to={"/product/" + props.id}>
+                                <img className={s.img} 
+                                    src={props.product.product_thumb_url} 
+                                    alt="Saffron">
+                                </img>  
+                            </Link>  
+                        </td>
+                        <td>
+                            <Link to={"/product/" + props.id}>
+                                <p>{props.product.id}</p>
+                            </Link>
+                        </td>
+                        <td>
+                            <p>{props.product.price}</p>
+                        </td>
+                        <td>
+                            <button onClick={props.onClick}>حذف</button>
+                        </td>
+                </tr>           
+            </tbody>
     );
 }
 

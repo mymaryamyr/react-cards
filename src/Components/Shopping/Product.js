@@ -8,7 +8,6 @@ import ProductCard from './ProductCard';
 import list from '../../data.json'
 import { addItem } from "../actions/index";
 import { increment } from "../actions/increment";
-import store from '../store';
 
 
 class Product extends Component {

@@ -1,17 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import '../../App.css'
 import s from '../../CSS.module/Card.module.css';
 import {
     BrowserRouter as Router,
-    Switch,
-    Route,
-    Link,
-    Redirect,
-    withRouter
+    Link
   } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
-import { faTree, faSkullCrossbones, faCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 
 
 function ProductCard(props) {

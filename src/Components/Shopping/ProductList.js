@@ -1,4 +1,4 @@
-import React, { Component, PropTypes} from 'react';
+import React, { Component } from 'react';
 import ProductCard from './ProductCard';
 import styles from '../../CSS.module/Card.module.css';
 

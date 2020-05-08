@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, useHistory, useLocation } from 'react-router-dom';
+import { useHistory, useLocation } from 'react-router-dom';
 import fakeAuth from "./fakeAuth"
 import AuthButton from "./AuthButton"
 

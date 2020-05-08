@@ -1,4 +1,4 @@
-import { Redirect, useHistory, Route } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import React from "react"
 import fakeAuth from "./fakeAuth"
 import s from "../../CSS.module/Form.module.css"

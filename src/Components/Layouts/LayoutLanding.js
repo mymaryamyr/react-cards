@@ -1,8 +1,5 @@
-import React, { Component } from 'react';  
-import { Route, Link } from 'react-router-dom';  
-import routes from '../../config/routes'
-import { Navbar } from '../../App';
-  
+import React from 'react';  
+import { Route } from 'react-router-dom';  
 
 const LayoutLanding = ({ children }) => (                         
     <div>
