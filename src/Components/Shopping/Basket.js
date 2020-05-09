@@ -4,22 +4,22 @@ import list from '../../data.json'
 import BasketDetail from './BasketDetail';
 import s from './BasketDetail.module.css'
 import { Link } from 'react-router-dom';
+import { removeItem, emptyBasket } from '../actions/index'
 
 class Basket extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: this.props.items,
       total: 0
     }
   }
   delete = (item) => {
-    const items = this.state.items.filter(i => i.id !== item.id)
-    this.setState({items})
+    const { removeItem } = this.props;
+    removeItem(item.id)
   }
   deletAll = () => {
-    const items = []
-    this.setState({ items })
+    const { emptyBasket } = this.props;
+    emptyBasket()
   }
   discount = () => {
     const { total } = this.state
@@ -41,7 +41,7 @@ class Basket extends Component {
     }
   }
   render () {
-    const { items } = this.state;
+    const { items } = this.props;
     const total = items.map(i => i.price).reduce((a, b) => a + b, 0)
     return (
       (items.length !== 0 ? 
@@ -106,10 +106,15 @@ class Basket extends Component {
 
 function mapStateToProps(state) {
     return {
-      items: state.items
+      items: state.basketReducer.items
     };
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    removeItem: item => dispatch(removeItem(item)),
+    emptyBasket: () => dispatch(emptyBasket())
+  };
+}
 
-
-export default connect(mapStateToProps)(Basket);
+export default connect(mapStateToProps, mapDispatchToProps)(Basket);

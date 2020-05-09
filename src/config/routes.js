@@ -7,49 +7,48 @@ import Product from "../Components/Shopping/Product";
 import Home from "../Components/Home";
 import LoginPage from "../Components/Login/LoginPage";
 
-const routes = {
-    home: {
+const routes = [
+    {
         title: "home",
         path: "/react-cards",
         component: Home
     },
-    listing: {
+    {
         title: "listing",
         path: "/listing",
         component: Listing
     },
-    aboutUs: {
+    {
         title: "about-us",
         path: "/about-us",
         component: AboutUs
-    }
-    ,
-    landing: {
+    },
+    {
         title: "landing",
         path: "/yalda",
         component: Yalda
     },
-    register: {
+    {
         title: "register",
         path: "/register",
         component: Register
     },
-    login: {
+    {
         title: "login",
         path: "/login",
         component: LoginPage
     },
-    basket: {
+    {
         title: "basket",
         path: "/basket",
         component: Basket
     },
-    product: {
+    {
         title: "product",
         path: "/product/:id",
         component: Product
     }
-}
+]
 
 
 

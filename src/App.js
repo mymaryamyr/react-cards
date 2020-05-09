@@ -14,33 +14,31 @@ import LoginPage from "./Components/Login/LoginPage"
 
 import fakeAuth from "./Components/Login/fakeAuth"
 
-import LayoutMainRoot from './Components/Layouts/LayoutMain';
+import LayoutMain from './Components/Layouts/LayoutMain';
 import LayoutLandingRoot from './Components/Layouts/LayoutLanding';
+import Basket from './Components/Shopping/Basket';
+import Yalda from './Components/Layouts/landing/Yalda';
 
 
 
 
 function App(props) {
+  const rootComponents = routes.map(({path, component}, key) => 
+  <Route exact path={path} component={component} key={key} />)
   return (
     <Router>
         <Switch>
-            <LayoutMainRoot path={routes.listing.path} component={routes.listing.component} />
-            <LayoutMainRoot exact path={routes.home.path} component={routes.home.component} />
-            <LayoutMainRoot path={routes.aboutUs.path} component={routes.aboutUs.component} />
-            <LayoutMainRoot path={routes.product.path} component={routes.product.component} />
-            <LayoutMainRoot path={routes.register.path} component={routes.register.component} />
-            <LayoutMainRoot path={routes.login.path} component={routes.login.component} />
-            
-            <PrivateRoute path={routes.basket.path} component={routes.basket.component} />
-
-            <LayoutLandingRoot path={routes.landing.path} component={routes.landing.component} />
+          <LayoutMain>
+            <Navbar />
+            {rootComponents}
+          </LayoutMain>
+          <PrivateRoute path="/basket" component={Basket} />
+          <LayoutLandingRoot path={routes.find(r => r.path === "/yalda")} component={Yalda} />
         </Switch>
     </Router>
   );
 }
-export {
-  Navbar,
-};
+
 
 
 const PrivateRoute = ({component: Component, ...rest}) => {

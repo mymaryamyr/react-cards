@@ -6,25 +6,24 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
-import store from './store';
-import { addItem } from './actions';
+
 
 
 class Navbar extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            id: ""
+            count: this.props.count
         }
     }
     render () {
         return (
             <div>
                 <ul className={s.navbar}>
-                    <li><Link to={routes.listing.path}>Listing</Link></li>
-                    <li><Link to={routes.aboutUs.path}>About Us</Link></li>
-                    <li><Link to={routes.register.path}>Register/Logout</Link></li>
-                    <li><Link to={routes.basket.path}>Basket</Link></li>
+                    <li><Link to='/listing'>Listing</Link></li>
+                    <li><Link to="/about-us">About Us</Link></li>
+                    <li><Link to="/register">Register/Logout</Link></li>
+                    <li><Link to="/basket">Basket</Link></li>
                 </ul>
                 <span>{this.props.count}</span>
             </div>
