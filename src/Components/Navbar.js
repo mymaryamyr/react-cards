@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import s from '../CSS.module/Navbar.module.css'
-import routes from '../config/routes';
 import { connect } from 'react-redux';
 import {
     BrowserRouter as Router,
@@ -10,22 +9,21 @@ import {
 
 
 class Navbar extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            count: this.props.count
-        }
-    }
     render () {
+        const { items } = this.props
         return (
             <div>
                 <ul className={s.navbar}>
                     <li><Link to='/listing'>Listing</Link></li>
                     <li><Link to="/about-us">About Us</Link></li>
                     <li><Link to="/register">Register/Logout</Link></li>
-                    <li><Link to="/basket">Basket</Link></li>
+                    <li>
+                        <Link to="/basket">
+                            <span>{items.length}</span>
+                            <span className={s.span}>Basket</span>
+                        </Link>
+                    </li>
                 </ul>
-                <span>{this.props.count}</span>
             </div>
     
         )
@@ -34,7 +32,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
     return {
-      count: state.count
+      items: state.items
     };
 }
 

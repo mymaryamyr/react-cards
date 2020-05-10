@@ -1,10 +1,7 @@
 import { createStore, combineReducers } from 'redux';
-import reducer from '../reducers/index'
+import basketReducer from '../store/reducers/index';
 
-
-
-
-export const store = createStore(reducer)
-
+const store = createStore(basketReducer)
+window.store = store
 
 export default store;

@@ -1,48 +1,48 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import list from '../../data.json'
-import BasketDetail from './BasketDetail';
 import s from './BasketDetail.module.css'
 import { Link } from 'react-router-dom';
-import { removeItem, emptyBasket } from '../actions/index'
+import { removeItem, emptyBasket } from '../store/actions/index'
 
 class Basket extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      total: 0
+      final: this.props.total
     }
   }
   delete = (item) => {
     const { removeItem } = this.props;
-    removeItem(item.id)
+    removeItem(item)
   }
-  deletAll = () => {
+  deleteAll = () => {
     const { emptyBasket } = this.props;
     emptyBasket()
   }
   discount = () => {
-    const { total } = this.state
+    const { total } = this.props
     const input = document.getElementById("discount-input")
     if (input.value === "keshmoon10") {
       if(total > 200000) {
-        this.setState({ total: total - (20000) })
+        this.setState({ final: total - (20000) })
       } else {
-        this.setState({ total: 0.9 * total})
+        this.setState({ final: 0.9 * total})
       }
     } else if (input.value === "keshmoon20") {
       if(total < 20000) {
-        this.setState({ total: 0})
+        this.setState({ final: 0})
       } else {
-        this.setState({ total: total - 20000})
+        this.setState({ final: total - 20000})
       }
     } else {
       return <p>کد وارد شده اشتباه است.</p>
     }
+    return total
   }
   render () {
-    const { items } = this.props;
-    const total = items.map(i => i.price).reduce((a, b) => a + b, 0)
+    const { items, total } = this.props;
+    const { final } = this.state;
     return (
       (items.length !== 0 ? 
         <div>
@@ -56,12 +56,29 @@ class Basket extends Component {
               </tr>
             </thead>
           {items.map((item, index) => (
-                <BasketDetail
-                  product={list.find(i => i.id == item.id)}
-                  key={index}
-                  id={item.id}
-                  onClick={this.delete.bind(this, item)}
-                />
+            <tbody key={index}>
+              <tr className={s.tr}>
+                    <td> 
+                        <Link to={"/product/" + item.id}>
+                            <img className={s.img} 
+                                src={item.product_thumb_url} 
+                                alt="Saffron">
+                            </img>  
+                        </Link>  
+                    </td>
+                    <td>
+                        <Link to={"/product/" + item.id}>
+                            <p>{item.id}</p>
+                        </Link>
+                    </td>
+                    <td>
+                        <p>{item.price}</p>
+                    </td>
+                    <td>
+                        <button onClick={this.delete}>حذف</button>
+                    </td>
+                </tr>           
+            </tbody>
             ))}
           </table>
           <table className={s.table}>
@@ -85,10 +102,13 @@ class Basket extends Component {
                   </button>
                 </td>
               </tr>  
-              <tr><td>مبلغ نهایی</td></tr>      
+              <tr>
+                <td>مبلغ نهایی</td>
+                <td>{final}</td>
+                </tr>      
               <tr className={s.empty}>
               <td>
-              <button onClick={this.deletAll}>خالی کردن سبد</button>
+              <button onClick={this.deleteAll}>خالی کردن سبد</button>
               </td>
               </tr>            
             </tbody>
@@ -105,15 +125,21 @@ class Basket extends Component {
 }
 
 function mapStateToProps(state) {
-    return {
-      items: state.basketReducer.items
-    };
+  const fullItems = state.items.map(basketItem => list.find(listItem => listItem.id == basketItem.id));
+  function calculation (items) {
+    const calc = items.map(i => i.price).reduce((a, b) => a + b, 0)
+    return  (calc)
+  }
+  return {
+    items: fullItems,
+    total: calculation(fullItems),
+  };
 }
 
 function mapDispatchToProps(dispatch) {
   return {
     removeItem: item => dispatch(removeItem(item)),
-    emptyBasket: () => dispatch(emptyBasket())
+    emptyBasket: () => dispatch(emptyBasket()),
   };
 }
 

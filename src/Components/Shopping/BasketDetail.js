@@ -13,18 +13,18 @@ function BasketDetail(props) {
                         <td> 
                             <Link to={"/product/" + props.id}>
                                 <img className={s.img} 
-                                    src={props.product.product_thumb_url} 
+                                    src={props.product_thumb_url} 
                                     alt="Saffron">
                                 </img>  
                             </Link>  
                         </td>
                         <td>
                             <Link to={"/product/" + props.id}>
-                                <p>{props.product.id}</p>
+                                <p>{props.id}</p>
                             </Link>
                         </td>
                         <td>
-                            <p>{props.product.price}</p>
+                            <p>{props.price}</p>
                         </td>
                         <td>
                             <button onClick={props.onClick}>حذف</button>

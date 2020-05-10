@@ -6,8 +6,7 @@ import {
 import { connect } from 'react-redux';
 import ProductCard from './ProductCard';
 import list from '../../data.json'
-import { addItem } from "../actions/index";
-import { increment } from "../actions/increment";
+import { addItem } from "../store/actions/index";
 
 
 class Product extends Component {
@@ -15,21 +14,20 @@ class Product extends Component {
         super(props);
         this.state = {
             id: this.props.match.params.id,
-            count: 0
+           
         }
         this.handleClick = this.handleClick.bind(this)
     }
     handleClick () {
-        const { id, count} = this.state
+        const { id } = this.state
         this.props.addItem( {id} );
-
     }
     render() {
         const id = this.props.match.params.id;
         return (
             <ProductCard 
                 onClick={this.handleClick} 
-                product={list.find(item => item.id == id)} 
+                product={list.find(i => i.id == id)} 
                 ShowBuy
             />
         )
@@ -39,7 +37,6 @@ class Product extends Component {
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),
-      increment: count => dispatch(increment(count))
     };
 
 }
