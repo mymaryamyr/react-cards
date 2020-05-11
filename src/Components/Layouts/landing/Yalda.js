@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import img from '../../../img/safron.png'
-import s from '../../../CSS.module/Landing.module.css';
+import s from './Landing.module.css';
 
 
 class Yalda extends Component {

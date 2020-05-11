@@ -16,7 +16,7 @@ import fakeAuth from "./Components/Login/fakeAuth"
 
 import LayoutMain from './Components/Layouts/LayoutMain';
 import LayoutLandingRoot from './Components/Layouts/LayoutLanding';
-import Basket from './Components/Shopping/Basket';
+import Basket from './Components/Shopping/Basket/Basket';
 import Yalda from './Components/Layouts/landing/Yalda';
 
 

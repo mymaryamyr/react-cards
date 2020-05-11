@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import React from "react"
 import fakeAuth from "./fakeAuth"
-import s from "../../CSS.module/Form.module.css"
+import s from "./Form.module.css"
 
 function AuthButton(props) {
     let history = useHistory();

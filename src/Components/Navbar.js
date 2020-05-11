@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import s from '../CSS.module/Navbar.module.css'
+import s from './Navbar.module.css'
 import { connect } from 'react-redux';
 import {
     BrowserRouter as Router,

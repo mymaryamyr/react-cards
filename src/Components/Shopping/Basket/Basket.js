@@ -1,20 +1,21 @@
 import React, {Component} from 'react';
 import { connect } from 'react-redux';
-import list from '../../data.json'
+import list from '../../../data.json'
 import s from './BasketDetail.module.css'
 import { Link } from 'react-router-dom';
-import { removeItem, emptyBasket } from '../store/actions/index'
+import { removeItem, emptyBasket } from '../../store/actions/index'
 
 class Basket extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      final: this.props.total
+      final: this.props.total,
+      id: this.props.items.id
     }
   }
-  delete = (item) => {
+  delete = () => {
     const { removeItem } = this.props;
-    removeItem(item)
+    removeItem(this.state.id)
   }
   deleteAll = () => {
     const { emptyBasket } = this.props;
@@ -85,11 +86,11 @@ class Basket extends Component {
             <tbody>
               <tr>
                 <td>مجموع</td>
-                <td>{total}</td>
+                <td className={s.td}>{total}</td>
               </tr>
               <tr>
                 <td>کدتخفیف</td>
-                <td>
+                <td className={s.td}>
                   <input 
                     className={s.input}
                     id="discount-input"
@@ -104,7 +105,7 @@ class Basket extends Component {
               </tr>  
               <tr>
                 <td>مبلغ نهایی</td>
-                <td>{final}</td>
+                <td className={s.td}>{final}</td>
                 </tr>      
               <tr className={s.empty}>
               <td>
@@ -124,12 +125,12 @@ class Basket extends Component {
   }
 }
 
+function calculation (items) {
+  const calc = items.map(i => i.price).reduce((a, b) => a + b, 0)
+  return  (calc)
+}
 function mapStateToProps(state) {
   const fullItems = state.items.map(basketItem => list.find(listItem => listItem.id == basketItem.id));
-  function calculation (items) {
-    const calc = items.map(i => i.price).reduce((a, b) => a + b, 0)
-    return  (calc)
-  }
   return {
     items: fullItems,
     total: calculation(fullItems),

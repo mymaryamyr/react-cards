@@ -2,7 +2,7 @@ import Listing from "../Components/Shopping/Listing";
 import AboutUs from "../Components/AboutUs";
 import Yalda from "../Components/Layouts/landing/Yalda";
 import Register from "../Components/Login/Register";
-import Basket from "../Components/Shopping/Basket";
+import Basket from "../Components/Shopping/Basket/Basket";
 import Product from "../Components/Shopping/Product";
 import Home from "../Components/Home";
 import LoginPage from "../Components/Login/LoginPage";

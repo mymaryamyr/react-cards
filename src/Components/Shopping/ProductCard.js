@@ -1,6 +1,6 @@
 import React from 'react';
 import '../../App.css'
-import s from '../../CSS.module/Card.module.css';
+import s from './Card.module.css';
 import {
     BrowserRouter as Router,
     Link
