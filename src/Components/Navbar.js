@@ -16,7 +16,7 @@ class Navbar extends Component {
                 <ul className={s.navbar}>
                     <li><Link to='/listing'>Listing</Link></li>
                     <li><Link to="/about-us">About Us</Link></li>
-                    <li><Link to="/register">Register/Logout</Link></li>
+                    <li><Link to="/login">Login</Link></li>
                     <li>
                         <Link to="/basket">
                             <span>{items.length}</span>

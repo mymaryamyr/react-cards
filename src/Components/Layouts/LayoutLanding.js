@@ -6,16 +6,5 @@ const LayoutLanding = ({ children }) => (
         {children}                                       
     </div>  
 );   
-const LayoutLandingRoot = ({ component: Component, ...rest }) => {
-    console.log("Landing Layout");
-   
-    return (
-      <Route {...rest} render={matchProps => (
-        <LayoutLanding>
-          <Component {...matchProps} />
-        </LayoutLanding>
-      )} />
-    )
-};
   
-export default LayoutLandingRoot; 
+export default LayoutLanding; 

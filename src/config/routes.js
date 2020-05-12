@@ -10,7 +10,7 @@ import LoginPage from "../Components/Login/LoginPage";
 const routes = [
     {
         title: "home",
-        path: "/react-cards",
+        path: "/",
         component: Home
     },
     {
@@ -26,7 +26,8 @@ const routes = [
     {
         title: "landing",
         path: "/yalda",
-        component: Yalda
+        component: Yalda,
+        landingLayout: true
     },
     {
         title: "register",
@@ -41,7 +42,8 @@ const routes = [
     {
         title: "basket",
         path: "/basket",
-        component: Basket
+        component: Basket,
+        private: true
     },
     {
         title: "product",

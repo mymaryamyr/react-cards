@@ -10,46 +10,66 @@ import {
 import './App.css';
 import Navbar from './Components/Navbar';
 import routes from './config/routes';
-import LoginPage from "./Components/Login/LoginPage"
-
-import fakeAuth from "./Components/Login/fakeAuth"
-
 import LayoutMain from './Components/Layouts/LayoutMain';
 import LayoutLandingRoot from './Components/Layouts/LayoutLanding';
 import Basket from './Components/Shopping/Basket/Basket';
+import LoginPage from "./Components/Login/LoginPage";
+import fakeAuth from "./Components/Login/fakeAuth";
+import AboutUs from './Components/AboutUs';
+import Listing from './Components/Shopping/Listing';
+import LayoutLanding from './Components/Layouts/LayoutLanding';
 import Yalda from './Components/Layouts/landing/Yalda';
 
 
 
-
 function App(props) {
-  const rootComponents = routes.map(({path, component}, key) => 
-  <Route exact path={path} component={component} key={key} />)
+  const rootComponents = routes.filter(i => i.private !== true).filter(i => i.landingLayout !== true).map(({path, component}, key) => 
+    <Route exact path={path} component={component} key={key} />)
+  /*
+  const privateComponents = routes.filter(i => i.private == true).map(({path, component}, key) => 
+    <PrivateRoute exact path={path} component={component} key={key} />)
+  */
   return (
     <Router>
-        <Switch>
-          <LayoutMain>
-            <Navbar />
-            {rootComponents}
-          </LayoutMain>
-          <PrivateRoute path="/basket" component={Basket} />
-          <LayoutLandingRoot path={routes.find(r => r.path === "/yalda")} component={Yalda} />
-        </Switch>
+      <Navbar>
+          <li><Link to="/listing">Listing</Link></li>
+          <li><Link to="/about-us">About Us</Link></li>
+          <li><Link to="/login">Register/Logout</Link></li>
+          <li><Link to="/basket">Basket</Link></li>
+      </Navbar>
+
+      <Switch>
+        {rootComponents}
+        <LayoutLanding>
+          <Yalda />
+        </LayoutLanding>
+        <PrivateRoute path="/basket">
+          <Basket />
+        </PrivateRoute>
+      </Switch>
     </Router>
   );
 }
 
-
-
-const PrivateRoute = ({component: Component, ...rest}) => {
+function PrivateRoute({ children, ...rest }) {
   return (
-      <Route {...rest} render={props => (
-        fakeAuth.isAuthenticated ?
-              <Component {...props} />   
-          : <Redirect to="/login" />
-      )} />
+    <Route
+      {...rest}
+      render={({ location }) =>
+        (fakeAuth.isAuthenticated)? (
+          children
+        ) : (
+          <Redirect
+            to={{
+              pathname: "/login",
+              state: { from: location }
+            }}
+          />
+        )
+      }
+    />
   );
-};
+}
 
 
 
