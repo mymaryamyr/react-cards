@@ -42,10 +42,10 @@ class Basket extends Component {
     return total
   }
   render () {
-    const { items, total } = this.props;
+    const { items, total, TotalCount } = this.props;
     const { final } = this.state;
     return (
-      (items.length !== 0 ? 
+      (TotalCount !== 0 ? 
         <div>
           <table className={s.table}>
             <thead>
@@ -134,6 +134,7 @@ function mapStateToProps(state) {
   return {
     items: fullItems,
     total: calculation(fullItems),
+    TotalCount: state.TotalCount
   };
 }
 
