@@ -5,7 +5,6 @@ import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET } from '../constants/action-types'
 const initialState = {
     items: [],
     total : 0,
-    TotalCount: 0
 };
 
 function basketReducer(state= initialState, action) {
@@ -14,7 +13,6 @@ function basketReducer(state= initialState, action) {
             return {
                 ...state,
                 items: state.items.concat(action.payload),
-                TotalCount: state.items.length
             }
         case REMOVE_ITEM:
             return {

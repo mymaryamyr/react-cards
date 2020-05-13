@@ -10,7 +10,7 @@ import {
 
 class Navbar extends Component {
     render () {
-        const { TotalCount } = this.props
+        const { items } = this.props
         return (
             <div>
                 <ul className={s.navbar}>
@@ -19,7 +19,7 @@ class Navbar extends Component {
                     <li><Link to="/login">Login</Link></li>
                     <li>
                         <Link to="/basket">
-                            <span>{TotalCount}</span>
+                            <span>{items.length}</span>
                             <span className={s.span}>Basket</span>
                         </Link>
                     </li>
@@ -32,7 +32,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
     return {
-        TotalCount: state.TotalCount
+        items: state.items
     };
 }
 

@@ -20,7 +20,7 @@ class Product extends Component {
     handleClick () {
         const { id } = this.state
         const { count } = this.props
-        this.props.addItem( {id , count} );
+        this.props.addItem( {id , count } );
     }
     render() {
         const id = this.props.match.params.id;
@@ -37,7 +37,7 @@ class Product extends Component {
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),
-      addItem: TotalCount => dispatch(addItem(TotalCount)),
+      addItem: count => dispatch(addItem(count)),
     };
 
 }

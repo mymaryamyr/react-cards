@@ -24,11 +24,13 @@ class Basket extends Component {
   discount = () => {
     const { total } = this.props
     const input = document.getElementById("discount-input")
+
     if (input.value === "keshmoon10") {
+
       if(total > 200000) {
-        this.setState({ final: total - (20000) })
+        this.setState({ final: (total - (20000)) })
       } else {
-        this.setState({ final: 0.9 * total})
+        this.setState({ final: (Math.round(9 * total)) / 10 })
       }
     } else if (input.value === "keshmoon20") {
       if(total < 20000) {
@@ -42,10 +44,10 @@ class Basket extends Component {
     return total
   }
   render () {
-    const { items, total, TotalCount } = this.props;
+    const { items, total } = this.props;
     const { final } = this.state;
     return (
-      (TotalCount !== 0 ? 
+      (items.length !== 0 ? 
         <div>
           <table className={s.table}>
             <thead>
@@ -134,7 +136,6 @@ function mapStateToProps(state) {
   return {
     items: fullItems,
     total: calculation(fullItems),
-    TotalCount: state.TotalCount
   };
 }
 
