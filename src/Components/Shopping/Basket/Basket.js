@@ -10,12 +10,11 @@ class Basket extends Component {
     super(props);
     this.state = {
       final: this.props.total,
-      id: this.props.items.id
     }
   }
-  delete = () => {
+  delete = (id) => {
     const { removeItem } = this.props;
-    removeItem(this.state.id)
+    removeItem(id)
   }
   deleteAll = () => {
     const { emptyBasket } = this.props;
@@ -28,19 +27,17 @@ class Basket extends Component {
     if (input.value === "keshmoon10") {
 
       if(total > 200000) {
-        this.setState({ final: (total - (20000)) })
+        this.setState({ final: (total - (20000)).toLocaleString() })
       } else {
-        this.setState({ final: (Math.round(9 * total)) / 10 })
+        this.setState({ final: ((Math.round(9 * total)) / 10).toLocaleString() })
       }
     } else if (input.value === "keshmoon20") {
       if(total < 20000) {
         this.setState({ final: 0})
       } else {
-        this.setState({ final: total - 20000})
+        this.setState({ final: (total - 20000).toLocaleString() })
       }
-    } else {
-      return <p>کد وارد شده اشتباه است.</p>
-    }
+    } 
     return total
   }
   render () {
@@ -54,11 +51,12 @@ class Basket extends Component {
               <tr className={s.tr}>
                 <td>عکس</td>
                 <td>آیدی</td>
+                <td>تعداد</td>
                 <td>قیمت</td>
                 <td>حذف</td>
               </tr>
             </thead>
-          {items.map((item, index) => (
+          {Object.keys(items).map((item, index) => (
             <tbody key={index}>
               <tr className={s.tr}>
                     <td> 
@@ -75,10 +73,19 @@ class Basket extends Component {
                         </Link>
                     </td>
                     <td>
-                        <p>{item.price}</p>
+                      <select>
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                      </select>
                     </td>
                     <td>
-                        <button onClick={this.delete}>حذف</button>
+                        <p>{(item.price)}</p>
+                    </td>
+                    <td>
+                        <button onClick={() => {this.delete(item.id)}}>حذف</button>
                     </td>
                 </tr>           
             </tbody>
@@ -108,7 +115,7 @@ class Basket extends Component {
               <tr>
                 <td>مبلغ نهایی</td>
                 <td className={s.td}>{final}</td>
-                </tr>      
+              </tr>      
               <tr className={s.empty}>
               <td>
               <button onClick={this.deleteAll}>خالی کردن سبد</button>
@@ -128,11 +135,12 @@ class Basket extends Component {
 }
 
 function calculation (items) {
-  const calc = items.map(i => i.price).reduce((a, b) => a + b, 0)
+  const calc = Object.keys(items).map(i => i.price).reduce((a, b) => a + b, 0)
   return  (calc)
 }
+
 function mapStateToProps(state) {
-  const fullItems = state.items.map(basketItem => list.find(listItem => listItem.id == basketItem.id));
+  const fullItems = Object.keys(state.items).map(basketItem => list.find(listItem => listItem.id == basketItem.id));
   return {
     items: fullItems,
     total: calculation(fullItems),

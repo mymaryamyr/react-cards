@@ -6,21 +6,15 @@ import {
 import { connect } from 'react-redux';
 import ProductCard from './ProductCard';
 import list from '../../data.json'
-import { addItem } from "../store/actions/index";
+import { addItem, increment } from "../store/actions/index";
 
 
 class Product extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            id: this.props.match.params.id,
-        }
-        this.handleClick = this.handleClick.bind(this)
-    }
-    handleClick () {
-        const { id } = this.state
-        const { count } = this.props
-        this.props.addItem( {id , count } );
+    handleClick = () => {
+        const id = this.props.match.params.id;
+        const { total } = this.props
+        this.props.addItem( {id} );
+        this.props.increment( total )
     }
     render() {
         const id = this.props.match.params.id;
@@ -37,8 +31,7 @@ class Product extends Component {
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),
-      addItem: count => dispatch(addItem(count)),
+      increment: total => dispatch(increment(total))
     };
-
 }
 export default withRouter(connect(null, mapDispatchToProps)(Product))

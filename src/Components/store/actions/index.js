@@ -5,6 +5,10 @@ export function addItem(payload) {
   return { type: ADD_ITEM, payload };
 }
 
+export function increment(payload) {
+  return { type: INCREMENT, payload };
+}
+
 export function emptyBasket() {
   return { type: EMPTY_BASKET };
 }

@@ -9,7 +9,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 
-
 function ProductCard(props) {
     return (
         <div className={`${s.card} ${s.a}`}> 
@@ -18,7 +17,7 @@ function ProductCard(props) {
             <p>product_type: {props.product.product_type}</p>
             <p>product_name: {props.product.product_name}</p>
             <p>weight: {props.product.weight}</p>
-            <p>price: {props.product.price}</p>
+            <p>price: {(props.product.price).toLocaleString()}</p>
             <button onClick={props.onClick} className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>{props.ShowBuy ? "خرید" : "مشاهده"}</Link></button>
             <div className={s.footer}>
                 <img className={s.img} src={props.product.farmer_thumb} alt="farmer in the land"></img>
