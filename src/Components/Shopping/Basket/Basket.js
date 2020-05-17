@@ -9,7 +9,7 @@ class Basket extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      final: this.props.total,
+      final: this.props.totalPrice,
     }
   }
   delete = (id) => {
@@ -41,10 +41,10 @@ class Basket extends Component {
     return total
   }
   render () {
-    const { items, total } = this.props;
+    const { items, totalPrice, totalCount } = this.props;
     const { final } = this.state;
     return (
-      (items.length !== 0 ? 
+      (totalCount !== 0 ? 
         <div>
           <table className={s.table}>
             <thead>
@@ -56,7 +56,7 @@ class Basket extends Component {
                 <td>حذف</td>
               </tr>
             </thead>
-          {Object.keys(items).map((item, index) => (
+          {items.map((item, index) => (
             <tbody key={index}>
               <tr className={s.tr}>
                     <td> 
@@ -95,7 +95,7 @@ class Basket extends Component {
             <tbody>
               <tr>
                 <td>مجموع</td>
-                <td className={s.td}>{total}</td>
+                <td className={s.td}>{totalPrice}</td>
               </tr>
               <tr>
                 <td>کدتخفیف</td>
@@ -135,15 +135,16 @@ class Basket extends Component {
 }
 
 function calculation (items) {
-  const calc = Object.keys(items).map(i => i.price).reduce((a, b) => a + b, 0)
+  const calc =items.map(i => i.price).reduce((a, b) => a + b, 0)
   return  (calc)
 }
 
 function mapStateToProps(state) {
-  const fullItems = Object.keys(state.items).map(basketItem => list.find(listItem => listItem.id == basketItem.id));
+  const fullItems = state.items.map(basketItem => list.find(listItem => listItem.id == basketItem.id));
   return {
     items: fullItems,
-    total: calculation(fullItems),
+    totalPrice: calculation(fullItems),
+    totalCount: state.totalCount
   };
 }
 

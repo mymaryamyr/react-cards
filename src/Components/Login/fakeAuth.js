@@ -1,5 +1,12 @@
+function getlocalStorage () {
+  if (localStorage.getItem("username")) return true
+  else {
+    return false
+  }
+}
+
 const fakeAuth = {
-  isAuthenticated: !(!localStorage),
+  isAuthenticated: getlocalStorage(),
   authenticate(cb) {
     fakeAuth.isAuthenticated = true;
     setTimeout(cb, 100); // fake async
