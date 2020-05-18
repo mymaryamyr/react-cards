@@ -41,13 +41,15 @@ function basketReducer(state= initialState, action) {
         case REMOVE_ITEM:
             return {
                 ...state,
-                items: Object.filter(state.items ,item => [item] !== action.payload),
+                items: Object.filter(state.items ,id => id !== String(action.payload)),
+                total: 0
             }
             
         case EMPTY_BASKET:
             return {
                 ...state,
-                items: {}
+                items: [],
+                total: 0
             }
         default:
             return state

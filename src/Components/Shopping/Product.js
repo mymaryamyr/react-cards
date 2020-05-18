@@ -15,11 +15,16 @@ import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 
 
 class Product extends Component {
-    handleClick = () => {
+    handleClick = (e) => {
+        const value = document.getElementById("selectQuantity").value
         const id = this.props.match.params.id;
+        let count = 0
         const { total } = this.props
-        this.props.addItem( {id} );
-        this.props.increment( total )
+        const { addItem, increment } = this.props
+        for(let i=0; i < value; i++ ) {
+            addItem( { id } );
+            increment( total )
+        }
     }
     render() {
         const id = this.props.match.params.id;
@@ -29,6 +34,13 @@ class Product extends Component {
                 <p>id: {product.id}</p>
                 <p>weight: {product.weight}</p>
                 <p>price: {(product.price).toLocaleString()}</p>
+                <select id="selectQuantity" className={s.select}>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
                 <button onClick={this.handleClick} className={s.button}><Link className={s.link} to={'/product/' + product.id}>خرید</Link></button>
                 <div className={s.footer}>
                     <p className={s.name}>{product.farmer_name}</p>
