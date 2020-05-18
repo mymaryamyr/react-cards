@@ -56,8 +56,8 @@ class Basket extends Component {
                 <td>حذف</td>
               </tr>
             </thead>
-          {items.map((item, index) => (
-            <tbody key={index}>
+          {Object.keys(items).map((item, id) => (
+            <tbody key={id}>
               <tr className={s.tr}>
                     <td> 
                         <Link to={"/product/" + item.id}>
@@ -135,12 +135,12 @@ class Basket extends Component {
 }
 
 function calculation (items) {
-  const calc =items.map(i => i.price).reduce((a, b) => a + b, 0)
+  const calc = Object.keys(items).map(i => i.price).reduce((a, b) => a + b, 0)
   return  (calc)
 }
 
 function mapStateToProps(state) {
-  const fullItems = state.items.map(basketItem => list.find(listItem => listItem.id == basketItem.id));
+  const fullItems = Object.keys(state.items).map(basketItem => list.find(listItem => listItem.id == basketItem.id));
   return {
     items: fullItems,
     totalPrice: calculation(fullItems),
