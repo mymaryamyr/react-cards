@@ -73,10 +73,10 @@ class Basket extends Component {
                         </Link>
                     </td>
                     <td>
-                      <p></p>
+                      <p>{item.quantity}</p>
                     </td>
                     <td>
-                        <p>{(item.price)}</p>
+                        <p>{(item.price)*(item.quantity)}</p>
                     </td>
                     <td>
                         <button onClick={() => {this.delete(item.id)}}>حذف</button>
@@ -129,7 +129,7 @@ class Basket extends Component {
 }
 
 function calculation (items) {
-  const calc = items.map(i => i.price).reduce((a, b) => a + b, 0)
+  const calc = items.map(i => (i.price)*(i.quantity)).reduce((a, b) => a + b, 0)
   return  (calc)
 }
 

@@ -16,14 +16,16 @@ import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 
 class Product extends Component {
     handleClick = (e) => {
-        const value = document.getElementById("selectQuantity").value
         const id = this.props.match.params.id;
-        let count = 0
+        const product = list.find(i => i.id == id)
+        const value = document.getElementById("selectQuantity").value
         const { total } = this.props
         const { addItem, increment } = this.props
         for(let i=0; i < value; i++ ) {
             addItem( { id } );
             increment( total )
+            product.quantity ++
+
         }
     }
     render() {

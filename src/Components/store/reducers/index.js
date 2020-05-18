@@ -41,8 +41,8 @@ function basketReducer(state= initialState, action) {
         case REMOVE_ITEM:
             return {
                 ...state,
-                items: Object.filter(state.items ,id => id !== String(action.payload)),
-                total: 0
+                items: Object.filter(state.items ,id => id !== String(action.payload.id)),
+                total: state.total - 1
             }
             
         case EMPTY_BASKET:

@@ -9,7 +9,8 @@
   "price": 77261,
   "organic_fertilizer": true,
   "quality_score": 233,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 2,
   "product_type": 0,
@@ -21,7 +22,8 @@
   "price": 66450,
   "organic_fertilizer": false,
   "quality_score": 241,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 3,
   "product_type": 0,
@@ -33,7 +35,8 @@
   "price": 107132,
   "organic_fertilizer": false,
   "quality_score": 242,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 4,
   "product_type": 0,
@@ -45,7 +48,8 @@
   "price": 108379,
   "organic_fertilizer": false,
   "quality_score": 243,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 5,
   "product_type": 0,
@@ -57,7 +61,8 @@
   "price": 100957,
   "organic_fertilizer": true,
   "quality_score": 248,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 6,
   "product_type": 0,
@@ -69,7 +74,8 @@
   "price": 67993,
   "organic_fertilizer": false,
   "quality_score": 220,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 7,
   "product_type": 0,
@@ -81,7 +87,8 @@
   "price": 90035,
   "organic_fertilizer": false,
   "quality_score": 229,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 8,
   "product_type": 0,
@@ -93,7 +100,8 @@
   "price": 64509,
   "organic_fertilizer": true,
   "quality_score": 238,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 9,
   "product_type": 0,
@@ -105,7 +113,8 @@
   "price": 115533,
   "organic_fertilizer": true,
   "quality_score": 224,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 10,
   "product_type": 0,
@@ -117,7 +126,8 @@
   "price": 72120,
   "organic_fertilizer": false,
   "quality_score": 228,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 11,
   "product_type": 0,
@@ -129,7 +139,8 @@
   "price": 92313,
   "organic_fertilizer": true,
   "quality_score": 232,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 12,
   "product_type": 0,
@@ -141,7 +152,8 @@
   "price": 115657,
   "organic_fertilizer": false,
   "quality_score": 242,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 13,
   "product_type": 0,
@@ -153,7 +165,8 @@
   "price": 118900,
   "organic_fertilizer": true,
   "quality_score": 241,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 14,
   "product_type": 0,
@@ -165,7 +178,8 @@
   "price": 118890,
   "organic_fertilizer": true,
   "quality_score": 238,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 15,
   "product_type": 0,
@@ -177,7 +191,8 @@
   "price": 106621,
   "organic_fertilizer": true,
   "quality_score": 247,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 16,
   "product_type": 0,
@@ -189,7 +204,8 @@
   "price": 111057,
   "organic_fertilizer": true,
   "quality_score": 236,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 17,
   "product_type": 0,
@@ -201,7 +217,8 @@
   "price": 92937,
   "organic_fertilizer": false,
   "quality_score": 241,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 18,
   "product_type": 0,
@@ -213,7 +230,8 @@
   "price": 70895,
   "organic_fertilizer": true,
   "quality_score": 246,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 19,
   "product_type": 0,
@@ -225,7 +243,8 @@
   "price": 88068,
   "organic_fertilizer": false,
   "quality_score": 220,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 20,
   "product_type": 0,
@@ -237,7 +256,8 @@
   "price": 94974,
   "organic_fertilizer": false,
   "quality_score": 233,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 21,
   "product_type": 0,
@@ -249,7 +269,8 @@
   "price": 112904,
   "organic_fertilizer": true,
   "quality_score": 227,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 22,
   "product_type": 0,
@@ -261,7 +282,8 @@
   "price": 94632,
   "organic_fertilizer": true,
   "quality_score": 238,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 23,
   "product_type": 0,
@@ -273,7 +295,8 @@
   "price": 73595,
   "organic_fertilizer": true,
   "quality_score": 237,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 24,
   "product_type": 0,
@@ -285,7 +308,8 @@
   "price": 84007,
   "organic_fertilizer": false,
   "quality_score": 238,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 25,
   "product_type": 0,
@@ -297,7 +321,8 @@
   "price": 74672,
   "organic_fertilizer": true,
   "quality_score": 224,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 26,
   "product_type": 0,
@@ -309,7 +334,8 @@
   "price": 92145,
   "organic_fertilizer": true,
   "quality_score": 243,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 27,
   "product_type": 0,
@@ -321,7 +347,8 @@
   "price": 60772,
   "organic_fertilizer": true,
   "quality_score": 242,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 28,
   "product_type": 0,
@@ -333,7 +360,8 @@
   "price": 102004,
   "organic_fertilizer": false,
   "quality_score": 223,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 29,
   "product_type": 0,
@@ -345,7 +373,8 @@
   "price": 96187,
   "organic_fertilizer": false,
   "quality_score": 244,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 30,
   "product_type": 0,
@@ -357,7 +386,8 @@
   "price": 78257,
   "organic_fertilizer": true,
   "quality_score": 242,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 31,
   "product_type": 0,
@@ -369,7 +399,8 @@
   "price": 85963,
   "organic_fertilizer": false,
   "quality_score": 223,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 32,
   "product_type": 0,
@@ -381,7 +412,8 @@
   "price": 85767,
   "organic_fertilizer": true,
   "quality_score": 220,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 33,
   "product_type": 0,
@@ -393,7 +425,8 @@
   "price": 82515,
   "organic_fertilizer": true,
   "quality_score": 229,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 34,
   "product_type": 0,
@@ -405,7 +438,8 @@
   "price": 78264,
   "organic_fertilizer": false,
   "quality_score": 235,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 35,
   "product_type": 0,
@@ -417,7 +451,8 @@
   "price": 63237,
   "organic_fertilizer": true,
   "quality_score": 232,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 36,
   "product_type": 0,
@@ -429,7 +464,8 @@
   "price": 70863,
   "organic_fertilizer": true,
   "quality_score": 249,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 37,
   "product_type": 0,
@@ -441,7 +477,8 @@
   "price": 86261,
   "organic_fertilizer": true,
   "quality_score": 222,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 38,
   "product_type": 0,
@@ -453,7 +490,8 @@
   "price": 97668,
   "organic_fertilizer": true,
   "quality_score": 229,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 39,
   "product_type": 0,
@@ -465,7 +503,8 @@
   "price": 70662,
   "organic_fertilizer": true,
   "quality_score": 242,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 40,
   "product_type": 0,
@@ -477,7 +516,8 @@
   "price": 63515,
   "organic_fertilizer": false,
   "quality_score": 246,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 41,
   "product_type": 0,
@@ -489,7 +529,8 @@
   "price": 100390,
   "organic_fertilizer": true,
   "quality_score": 245,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 42,
   "product_type": 0,
@@ -501,7 +542,8 @@
   "price": 108083,
   "organic_fertilizer": true,
   "quality_score": 223,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 43,
   "product_type": 0,
@@ -513,7 +555,8 @@
   "price": 60013,
   "organic_fertilizer": false,
   "quality_score": 235,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 44,
   "product_type": 0,
@@ -525,7 +568,8 @@
   "price": 81841,
   "organic_fertilizer": false,
   "quality_score": 222,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 45,
   "product_type": 0,
@@ -537,7 +581,8 @@
   "price": 67699,
   "organic_fertilizer": false,
   "quality_score": 243,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 46,
   "product_type": 0,
@@ -549,7 +594,8 @@
   "price": 117578,
   "organic_fertilizer": true,
   "quality_score": 229,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 47,
   "product_type": 0,
@@ -561,7 +607,8 @@
   "price": 94936,
   "organic_fertilizer": true,
   "quality_score": 230,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 48,
   "product_type": 0,
@@ -573,7 +620,8 @@
   "price": 111550,
   "organic_fertilizer": true,
   "quality_score": 226,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 49,
   "product_type": 0,
@@ -585,7 +633,8 @@
   "price": 88385,
   "organic_fertilizer": false,
   "quality_score": 247,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 50,
   "product_type": 0,
@@ -597,7 +646,8 @@
   "price": 91805,
   "organic_fertilizer": false,
   "quality_score": 231,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 51,
   "product_type": 0,
@@ -609,7 +659,8 @@
   "price": 64584,
   "organic_fertilizer": false,
   "quality_score": 221,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 52,
   "product_type": 0,
@@ -621,7 +672,8 @@
   "price": 95126,
   "organic_fertilizer": true,
   "quality_score": 225,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 53,
   "product_type": 0,
@@ -633,7 +685,8 @@
   "price": 89481,
   "organic_fertilizer": true,
   "quality_score": 229,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 54,
   "product_type": 0,
@@ -645,7 +698,8 @@
   "price": 93370,
   "organic_fertilizer": true,
   "quality_score": 231,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 55,
   "product_type": 0,
@@ -657,7 +711,8 @@
   "price": 117985,
   "organic_fertilizer": true,
   "quality_score": 227,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 56,
   "product_type": 0,
@@ -669,7 +724,8 @@
   "price": 71087,
   "organic_fertilizer": false,
   "quality_score": 246,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 57,
   "product_type": 0,
@@ -681,7 +737,8 @@
   "price": 88590,
   "organic_fertilizer": true,
   "quality_score": 242,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 58,
   "product_type": 0,
@@ -693,7 +750,8 @@
   "price": 84039,
   "organic_fertilizer": false,
   "quality_score": 222,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 59,
   "product_type": 0,
@@ -705,7 +763,8 @@
   "price": 70634,
   "organic_fertilizer": false,
   "quality_score": 250,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 60,
   "product_type": 0,
@@ -717,7 +776,8 @@
   "price": 83814,
   "organic_fertilizer": true,
   "quality_score": 245,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 61,
   "product_type": 0,
@@ -729,7 +789,8 @@
   "price": 76936,
   "organic_fertilizer": true,
   "quality_score": 238,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 62,
   "product_type": 0,
@@ -741,7 +802,8 @@
   "price": 86441,
   "organic_fertilizer": false,
   "quality_score": 221,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 63,
   "product_type": 0,
@@ -753,7 +815,8 @@
   "price": 97480,
   "organic_fertilizer": false,
   "quality_score": 247,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 64,
   "product_type": 0,
@@ -765,7 +828,8 @@
   "price": 99917,
   "organic_fertilizer": false,
   "quality_score": 236,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 65,
   "product_type": 0,
@@ -777,7 +841,8 @@
   "price": 76274,
   "organic_fertilizer": true,
   "quality_score": 224,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 66,
   "product_type": 0,
@@ -789,7 +854,8 @@
   "price": 96693,
   "organic_fertilizer": true,
   "quality_score": 231,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 67,
   "product_type": 0,
@@ -801,7 +867,8 @@
   "price": 111019,
   "organic_fertilizer": false,
   "quality_score": 226,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 68,
   "product_type": 0,
@@ -813,7 +880,8 @@
   "price": 105139,
   "organic_fertilizer": true,
   "quality_score": 229,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 69,
   "product_type": 0,
@@ -825,7 +893,8 @@
   "price": 96079,
   "organic_fertilizer": false,
   "quality_score": 222,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 70,
   "product_type": 0,
@@ -837,7 +906,8 @@
   "price": 113656,
   "organic_fertilizer": true,
   "quality_score": 236,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 71,
   "product_type": 0,
@@ -849,7 +919,8 @@
   "price": 105328,
   "organic_fertilizer": true,
   "quality_score": 227,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 72,
   "product_type": 0,
@@ -861,7 +932,8 @@
   "price": 82339,
   "organic_fertilizer": true,
   "quality_score": 237,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 73,
   "product_type": 0,
@@ -873,7 +945,8 @@
   "price": 113339,
   "organic_fertilizer": false,
   "quality_score": 241,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 74,
   "product_type": 0,
@@ -885,7 +958,8 @@
   "price": 81264,
   "organic_fertilizer": true,
   "quality_score": 238,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 75,
   "product_type": 0,
@@ -897,7 +971,8 @@
   "price": 75727,
   "organic_fertilizer": false,
   "quality_score": 235,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 76,
   "product_type": 0,
@@ -909,7 +984,8 @@
   "price": 107107,
   "organic_fertilizer": true,
   "quality_score": 222,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 77,
   "product_type": 0,
@@ -921,7 +997,8 @@
   "price": 88240,
   "organic_fertilizer": true,
   "quality_score": 244,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 78,
   "product_type": 0,
@@ -933,7 +1010,8 @@
   "price": 107413,
   "organic_fertilizer": true,
   "quality_score": 230,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 79,
   "product_type": 0,
@@ -945,7 +1023,8 @@
   "price": 77609,
   "organic_fertilizer": true,
   "quality_score": 236,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 80,
   "product_type": 0,
@@ -957,7 +1036,8 @@
   "price": 69076,
   "organic_fertilizer": true,
   "quality_score": 246,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 81,
   "product_type": 0,
@@ -969,7 +1049,8 @@
   "price": 79290,
   "organic_fertilizer": false,
   "quality_score": 226,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 82,
   "product_type": 0,
@@ -981,7 +1062,8 @@
   "price": 117634,
   "organic_fertilizer": true,
   "quality_score": 232,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 83,
   "product_type": 0,
@@ -993,7 +1075,8 @@
   "price": 66126,
   "organic_fertilizer": false,
   "quality_score": 250,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 84,
   "product_type": 0,
@@ -1005,7 +1088,8 @@
   "price": 110166,
   "organic_fertilizer": true,
   "quality_score": 230,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 85,
   "product_type": 0,
@@ -1017,7 +1101,8 @@
   "price": 86412,
   "organic_fertilizer": false,
   "quality_score": 247,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 86,
   "product_type": 0,
@@ -1029,7 +1114,8 @@
   "price": 119958,
   "organic_fertilizer": true,
   "quality_score": 224,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 87,
   "product_type": 0,
@@ -1041,7 +1127,8 @@
   "price": 116473,
   "organic_fertilizer": true,
   "quality_score": 229,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 88,
   "product_type": 0,
@@ -1053,7 +1140,8 @@
   "price": 91417,
   "organic_fertilizer": false,
   "quality_score": 229,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 89,
   "product_type": 0,
@@ -1065,7 +1153,8 @@
   "price": 115342,
   "organic_fertilizer": false,
   "quality_score": 227,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 90,
   "product_type": 0,
@@ -1077,7 +1166,8 @@
   "price": 62554,
   "organic_fertilizer": false,
   "quality_score": 233,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 91,
   "product_type": 0,
@@ -1089,7 +1179,8 @@
   "price": 110652,
   "organic_fertilizer": false,
   "quality_score": 248,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 92,
   "product_type": 0,
@@ -1101,7 +1192,8 @@
   "price": 112795,
   "organic_fertilizer": true,
   "quality_score": 221,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 93,
   "product_type": 0,
@@ -1113,7 +1205,8 @@
   "price": 96182,
   "organic_fertilizer": false,
   "quality_score": 229,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 94,
   "product_type": 0,
@@ -1125,7 +1218,8 @@
   "price": 119666,
   "organic_fertilizer": false,
   "quality_score": 240,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 95,
   "product_type": 0,
@@ -1137,7 +1231,8 @@
   "price": 71819,
   "organic_fertilizer": true,
   "quality_score": 220,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 96,
   "product_type": 0,
@@ -1149,7 +1244,8 @@
   "price": 94897,
   "organic_fertilizer": true,
   "quality_score": 236,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 97,
   "product_type": 0,
@@ -1161,7 +1257,8 @@
   "price": 113325,
   "organic_fertilizer": true,
   "quality_score": 231,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }, {
   "id": 98,
   "product_type": 0,
@@ -1173,7 +1270,8 @@
   "price": 71825,
   "organic_fertilizer": true,
   "quality_score": 249,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 99,
   "product_type": 0,
@@ -1185,7 +1283,8 @@
   "price": 86310,
   "organic_fertilizer": true,
   "quality_score": 228,
-  "chemical_afatkosh": false
+  "chemical_afatkosh": false,
+  "quantity" : 0
 }, {
   "id": 100,
   "product_type": 0,
@@ -1197,5 +1296,6 @@
   "price": 113910,
   "organic_fertilizer": true,
   "quality_score": 232,
-  "chemical_afatkosh": true
+  "chemical_afatkosh": true,
+  "quantity" : 0
 }]
