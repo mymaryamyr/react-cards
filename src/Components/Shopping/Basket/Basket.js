@@ -21,24 +21,34 @@ class Basket extends Component {
     emptyBasket()
   }
   discount = () => {
-    const { total } = this.props
+    const { final } = this.state
     const input = document.getElementById("discount-input")
 
     if (input.value === "keshmoon10") {
 
-      if(total > 200000) {
-        this.setState({ final: (total - (20000)).toLocaleString() })
+      if(final > 200000) {
+        this.setState({ final: (final - (20000)).toLocaleString() })
+        return final
       } else {
-        this.setState({ final: ((Math.round(9 * total)) / 10).toLocaleString() })
+        this.setState({ final: ((Math.round(9 * final)) / 10).toLocaleString() })
+        return final
       }
     } else if (input.value === "keshmoon20") {
-      if(total < 20000) {
+      if(final < 20000) {
         this.setState({ final: 0})
+        return final
       } else {
-        this.setState({ final: (total - 20000).toLocaleString() })
+        this.setState({ final: (final - 20000).toLocaleString() })
+        return final
       }
     } 
-    return total
+    return final
+
+  }
+  changeQuantity = () => {
+    const value = document.getElementById("selectQuantityBasket").value
+    
+    console.log(value)
   }
   render () {
     let { items, totalPrice, totalCount } = this.props;
@@ -73,10 +83,16 @@ class Basket extends Component {
                         </Link>
                     </td>
                     <td>
-                      <p>{item.quantity}</p>
+                    <select id="selectQuantityBasket" value={item.quantity} onChange={this.changeQuantity}>
+                      <option value="1">1</option>
+                      <option value="2">2</option>
+                      <option value="3">3</option>
+                      <option value="4">4</option>
+                      <option value="5">5</option>
+                    </select>
                     </td>
                     <td>
-                        <p>{(item.price)*(item.quantity)}</p>
+                        <p>{((item.price)*(item.quantity)).toLocaleString()}</p>
                     </td>
                     <td>
                         <button onClick={() => {this.delete(item.id)}}>حذف</button>
@@ -108,7 +124,7 @@ class Basket extends Component {
               </tr>  
               <tr>
                 <td>مبلغ نهایی</td>
-                <td className={s.td}>{final}</td>
+                <td className={s.td}>{final.toLocaleString()}</td>
               </tr>      
               <tr className={s.empty}>
               <td>
@@ -135,7 +151,6 @@ function calculation (items) {
 
 function mapStateToProps(state) {
   const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
-  console.log(fullItems)
   return {
     items: fullItems,
     totalPrice: calculation(fullItems),

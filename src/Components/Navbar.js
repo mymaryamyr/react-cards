@@ -5,13 +5,11 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
-import { increment } from './store/actions/index'
-
 
 
 class Navbar extends Component {
     render () {
-        const { total } = this.props
+        const { totalCount } = this.props
         return (
             <div>
                 <ul className={s.navbar}>
@@ -20,7 +18,7 @@ class Navbar extends Component {
                     <li><Link to="/login">Login</Link></li>
                     <li>
                         <Link to="/basket">
-                            <span>{total}</span>
+                            <span>{totalCount}</span>
                             <span className={s.span}>Basket</span>
                         </Link>
                     </li>
@@ -33,7 +31,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
     return {
-        total: state.total
+        totalCount: state.totalCount
     };
 }
 

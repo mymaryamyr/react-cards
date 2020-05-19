@@ -19,11 +19,11 @@ class Product extends Component {
         const id = this.props.match.params.id;
         const product = list.find(i => i.id == id)
         const value = document.getElementById("selectQuantity").value
-        const { total } = this.props
+        const { totalCount } = this.props
         const { addItem, increment } = this.props
         for(let i=0; i < value; i++ ) {
             addItem( { id } );
-            increment( total )
+            increment( { totalCount } )
             product.quantity ++
 
         }
@@ -58,7 +58,7 @@ class Product extends Component {
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),
-      increment: total => dispatch(increment(total))
+      increment: totalCount => dispatch(increment(totalCount))
     };
 }
 export default withRouter(connect(null, mapDispatchToProps)(Product))
