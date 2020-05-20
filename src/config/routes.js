@@ -9,36 +9,44 @@ import LoginPage from "../Components/Login/LoginPage";
 
 const routes = [
     {
+        title: "home",
         path: "/",
         component: Home
     },
     {
+        title: "listing",
         path: "/listing",
         component: Listing
     },
     {
+        title: "about-us",
         path: "/about-us",
         component: AboutUs
     },
     {
+        title: "landing",
         path: "/yalda",
         component: Yalda,
         landingLayout: true
     },
     {
+        title: "register",
         path: "/register",
         component: Register
     },
     {
+        title: "login",
         path: "/login",
         component: LoginPage
     },
     {
+        title: "basket",
         path: "/basket",
         component: Basket,
         private: true
     },
     {
+        title: "product",
         path: "/product/:id",
         component: Product
     }

@@ -5,9 +5,16 @@ import {
     BrowserRouter as Router,
     Link
   } from "react-router-dom";
+import BasketDemo from './Shopping/Basket/Basket.demo';
 
 
 class Navbar extends Component {
+    constructor (props) {
+        super(props);
+        this.state = {
+            shown: false
+        }
+    }
     render () {
         const { totalCount } = this.props
         return (
@@ -17,12 +24,18 @@ class Navbar extends Component {
                     <li><Link to="/about-us">About Us</Link></li>
                     <li><Link to="/login">Login</Link></li>
                     <li>
-                        <Link to="/basket">
+                        <Link to="/basket"
+                            onMouseEnter={()=> this.setState({shown: true})}
+                            onMouseLeave={()=> this.setState({shown: false})}
+                        >
                             <span>{totalCount}</span>
                             <span className={s.span}>Basket</span>
                         </Link>
                     </li>
                 </ul>
+                {this.state.shown && (
+                    <BasketDemo />
+                )}
             </div>
     
         )

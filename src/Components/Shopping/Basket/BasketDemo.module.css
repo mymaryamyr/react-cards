@@ -1,0 +1,22 @@
+.div {
+    background-color: aquamarine;
+    transition: "background-color 350ms ease";
+    position: absolute;
+    left: 0;
+    top: 60px;
+}
+.table {
+    padding: 5px;
+    width: 200px;
+    margin: auto;
+    border: 1px solid olive;
+}
+.img {
+    width: 20px;
+}
+.tr {
+    line-height: 30px;
+}
+.p {
+    padding: 0 5px;
+}
