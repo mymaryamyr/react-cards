@@ -28,3 +28,8 @@
 .span {
     padding: 0 10px;
 }
+.div {
+    position: relative;
+    text-align: center;
+    margin: auto;
+}

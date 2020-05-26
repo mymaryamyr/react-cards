@@ -31,11 +31,13 @@ class Navbar extends Component {
                             <span>{totalCount}</span>
                             <span className={s.span}>Basket</span>
                         </Link>
+                        <div className={s.div}>
+                            {this.state.shown && (
+                                <BasketDemo />
+                            )}
+                        </div>
                     </li>
                 </ul>
-                {this.state.shown && (
-                    <BasketDemo />
-                )}
             </div>
     
         )
@@ -44,7 +46,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
     return {
-        totalCount: state.totalCount
+        totalCount: state.totalCount,
     };
 }
 

@@ -17,14 +17,13 @@ import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 class Product extends Component {
     handleClick = (e) => {
         const id = this.props.match.params.id;
-        const product = list.find(i => i.id == id)
         const value = document.getElementById("selectQuantity").value
-        const { totalCount } = this.props
+        let { totalCount, count } = this.props
         const { addItem, increment } = this.props
         for(let i=0; i < value; i++ ) {
             addItem( { id } );
             increment( { totalCount } )
-            product.quantity ++
+            count = count + value
 
         }
     }
@@ -55,6 +54,13 @@ class Product extends Component {
     }    
 }
 
+/*
+function mapStateToProps(state) {
+    return {
+        count: state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
+    }
+}
+*/
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),

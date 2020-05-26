@@ -51,7 +51,7 @@ class Basket extends Component {
     console.log(value)
   }
   render () {
-    let { items, totalPrice, totalCount } = this.props;
+    let { items, totalPrice, totalCount, count } = this.props;
     const { final } = this.state;
     return (
       (totalCount !== 0 ? 
@@ -83,16 +83,10 @@ class Basket extends Component {
                         </Link>
                     </td>
                     <td>
-                    <select id="selectQuantityBasket" value={item.quantity} onChange={this.changeQuantity}>
-                      <option value="1">1</option>
-                      <option value="2">2</option>
-                      <option value="3">3</option>
-                      <option value="4">4</option>
-                      <option value="5">5</option>
-                    </select>
+                      <p>{count}</p>
                     </td>
                     <td>
-                        <p>{((item.price)*(item.quantity)).toLocaleString()}</p>
+                        <p>{((item.price)*(count)).toLocaleString()}</p>
                     </td>
                     <td>
                         <button onClick={() => {this.delete(item.id)}}>حذف</button>
@@ -144,17 +138,20 @@ class Basket extends Component {
   }
 }
 
-function calculation (items) {
-  const calc = items.map(i => (i.price)*(i.quantity)).reduce((a, b) => a + b, 0)
-  return  (calc)
-}
 
 function mapStateToProps(state) {
+  let count = state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
+  function calculation (items) {
+    const calc = items.map(i => (i.price)*(count)).reduce((a, b) => a + b, 0)
+    return  (calc)
+  }
   const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
+  console.log(state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count)
   return {
     items: fullItems,
     totalPrice: calculation(fullItems),
     totalCount: state.totalCount,
+    count: count
   };
 }
 

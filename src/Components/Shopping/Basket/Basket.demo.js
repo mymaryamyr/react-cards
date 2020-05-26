@@ -12,7 +12,7 @@ class BasketDemo extends Component {
     }
   }
   render () {
-    let { items, totalPrice, totalCount } = this.props;
+    let { items, totalPrice, totalCount, count } = this.props;
     const { final } = this.state;
     return (
       (totalCount !== 0 ? 
@@ -38,10 +38,10 @@ class BasketDemo extends Component {
                           </Link>  
                       </td>
                       <td>
-                      <p>{item.quantity}</p>
+                      <p>{count}</p>
                       </td>
                       <td>
-                          <p>{((item.price)*(item.quantity)).toLocaleString()}</p>
+                          <p>{((item.price)).toLocaleString()}</p>
                       </td>
                   </tr>           
               </tbody>
@@ -59,24 +59,20 @@ class BasketDemo extends Component {
 }
 
 function calculation (items) {
-  const calc = items.map(i => (i.price)*(i.quantity)).reduce((a, b) => a + b, 0)
+  const calc = items.map(i => (i.price)).reduce((a, b) => a + b, 0)
   return  (calc)
 }
 
 function mapStateToProps(state) {
+  let count = state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
   const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
   return {
     items: fullItems,
     totalPrice: calculation(fullItems),
     totalCount: state.totalCount,
+    count: count
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return {
-    removeItem: item => dispatch(removeItem(item)),
-    emptyBasket: () => dispatch(emptyBasket()),
-  };
-}
 
-export default connect(mapStateToProps, mapDispatchToProps)(BasketDemo);
+export default connect(mapStateToProps)(BasketDemo);
