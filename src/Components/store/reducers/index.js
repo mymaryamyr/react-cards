@@ -40,9 +40,13 @@ function basketReducer(state= initialState, action) {
                 totalCount: state.totalCount + 1
             }
         case REMOVE_ITEM:
+            const acceptedValue = [String(action.payload.id)]
             return {
                 ...state,
-                items: Object.filter(state.items ,id => id !== String(action.payload.id)),
+                items: Object.keys(state.items).reduce(function(r, e) {
+                    if (acceptedValue.includes(state.items[e])) r[e] = state.items[e]
+                    return r;
+                  }, {}),
                 totalCount: 0
             }
             

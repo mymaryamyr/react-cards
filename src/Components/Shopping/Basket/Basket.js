@@ -140,18 +140,23 @@ class Basket extends Component {
 
 
 function mapStateToProps(state) {
-  let count = state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
   function calculation (items) {
-    const calc = items.map(i => (i.price)*(count)).reduce((a, b) => a + b, 0)
+    const calc = items.map(i => (i.price)).reduce((a, b) => a + b, 0)
     return  (calc)
   }
   const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
-  console.log(state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count)
+
   return {
     items: fullItems,
     totalPrice: calculation(fullItems),
     totalCount: state.totalCount,
-    count: count
+    count: state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
+    /*
+    count:   Object.keys(state.items).forEach(element => {
+      var count = (state.items[element].id)
+      console.log(count)
+    })
+    */
   };
 }
 
