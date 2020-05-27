@@ -1,11 +1,11 @@
 import React from 'react';  
 import { Route } from 'react-router-dom';  
 
-function LayoutLanding({ children, ...rest }) {
+const LayoutLanding = ({ children }) => {
   return (
-    <Route>
-    {children}
-    </Route>
+    <div>
+      {children}
+    </div>
   );
 }
 

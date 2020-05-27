@@ -11,6 +11,7 @@ function LoginPage() {
   let { from } = location.state || { from: { pathname: "/" } };
 
   let login = (e) => {
+    e.preventDefault()
     if(handleValidation) {
         const details = {
           'username' : name,
@@ -26,16 +27,15 @@ function LoginPage() {
   };
   function handleValidation () {
     let formIsValid = true;
-    let errors = ''
     let user = localStorage.getItem("username")
-    if(user){
+    if(!user){
         formIsValid = false;
         alert("Cannot be empty");
      }
     if(typeof user !== "undefined") {
         if(user.match(/^[a-zA-Z]+$/)) {
             formIsValid = false;
-            errors = "name is invalid";
+            console.log("name is invalid")
         }
     } 
     return formIsValid;

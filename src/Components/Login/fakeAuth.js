@@ -1,5 +1,7 @@
 function getlocalStorage () {
-  if (localStorage.getItem("username")) return true
+  if (localStorage.getItem("username") &&
+      localStorage.getItem("mobile")
+  ) return true
   else {
     return false
   }
@@ -13,7 +15,8 @@ const fakeAuth = {
   },
   signout(cb) {
     fakeAuth.isAuthenticated = false;
-    localStorage.clear()
+    localStorage.removeItem("username")
+    localStorage.removeItem("mobile")
     setTimeout(cb, 100);
   }
 };

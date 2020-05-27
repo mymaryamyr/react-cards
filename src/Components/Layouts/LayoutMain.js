@@ -4,9 +4,11 @@ import Navbar from '../Navbar';
 import routes from '../../config/routes'
   
 
-const LayoutMain = ({ children, ...rest }) => {
+const LayoutMain = ({ children }) => {
     return (
       <div>
+        <Navbar />
+        <p>this is something</p>
         {children}
       </div>
     )
