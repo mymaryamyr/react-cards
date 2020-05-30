@@ -8,7 +8,7 @@ function LoginPage() {
   let location = useLocation();
   const [name, setName] = useState('');
   const [mobile, setMobile] = useState('');
-  let { from } = location.state || { from: { pathname: "/" } };
+  let { from } = location.state || { from: { pathname: "/home" } };
 
   let login = (e) => {
     e.preventDefault()
@@ -45,7 +45,7 @@ function LoginPage() {
     <button
       className={`${s.button} ${s.red}`} 
       onClick={() => {
-        fakeAuth.signout(() => history.push("/"));
+        fakeAuth.signout(() => history.push("/home"));
       }}
     >
       خروج از حساب کاربری

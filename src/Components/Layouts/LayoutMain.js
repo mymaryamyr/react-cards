@@ -8,7 +8,6 @@ const LayoutMain = ({ children }) => {
     return (
       <div>
         <Navbar />
-        <p>this is something</p>
         {children}
       </div>
     )
