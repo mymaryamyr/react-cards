@@ -41,7 +41,7 @@ class BasketDemo extends Component {
                       <p>{count}</p>
                       </td>
                       <td>
-                          <p>{((item.price)).toLocaleString()}</p>
+                          <p>{(totalPrice).toLocaleString()}</p>
                       </td>
                   </tr>           
               </tbody>
@@ -58,13 +58,14 @@ class BasketDemo extends Component {
   }
 }
 
-function calculation (items) {
-  const calc = items.map(i => (i.price)).reduce((a, b) => a + b, 0)
-  return  (calc)
-}
+
 
 function mapStateToProps(state) {
   let count = state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
+  function calculation (items) {
+    const calc = items.map(i => (i.price) * count).reduce((a, b) => a + b, 0)
+    return  (calc)
+  }
   const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
   return {
     items: fullItems,

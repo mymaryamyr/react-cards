@@ -1,4 +1,4 @@
-import { ADD_ITEM, EMPTY_BASKET, REMOVE_ITEM, INCREMENT, ADD_DISCOUNT } from '../constants/action-types'
+import { ADD_ITEM, EMPTY_BASKET, REMOVE_ITEM, INCREMENT, ADD_DISCOUNT, CALC_FINAL } from '../constants/action-types'
 
 
 export function addItem(payload) {
@@ -19,4 +19,8 @@ export function removeItem(payload) {
 
 export function addDiscount(payload) {
   return { type: ADD_DISCOUNT, payload };
+}
+
+export function calcFinal(payload) {
+  return { type: CALC_FINAL, payload };
 }

@@ -3,15 +3,9 @@ import { connect } from 'react-redux';
 import list from '../../../data.json'
 import s from './BasketDetail.module.css'
 import { Link } from 'react-router-dom';
-import { removeItem, emptyBasket } from '../../store/actions/index'
+import { removeItem, emptyBasket, calcFinal } from '../../store/actions/index'
 
 class Basket extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      final: this.props.totalPrice,
-    }
-  }
   delete = (id) => {
     const { removeItem } = this.props;
     removeItem(id)
@@ -21,29 +15,30 @@ class Basket extends Component {
     emptyBasket()
   }
   discount = () => {
-    const { final } = this.state
+    const { calcFinal ,totalPrice} = this.props;
+    calcFinal(totalPrice)
+
     const input = document.getElementById("discount-input")
 
     if (input.value === "keshmoon10") {
 
-      if(final > 200000) {
-        this.setState({ final: (final - (20000)).toLocaleString() })
-        return final
+      if(totalPrice > 200000) {
+        calcFinal((totalPrice - 20000).toLocaleString())
+        return totalPrice
       } else {
-        this.setState({ final: ((Math.round(9 * final)) / 10).toLocaleString() })
-        return final
+        calcFinal((Math.round(9 * totalPrice) / 10).toLocaleString())
+        return totalPrice
       }
     } else if (input.value === "keshmoon20") {
-      if(final < 20000) {
-        this.setState({ final: 0})
-        return final
+
+      if(totalPrice < 20000) {
+        calcFinal(0)
+        return 0
       } else {
-        this.setState({ final: (final - 20000).toLocaleString() })
-        return final
+        calcFinal((totalPrice - 20000).toLocaleString())
+        return totalPrice
       }
     } 
-    return final
-
   }
   changeQuantity = () => {
     const value = document.getElementById("selectQuantityBasket").value
@@ -51,8 +46,7 @@ class Basket extends Component {
     console.log(value)
   }
   render () {
-    let { items, totalPrice, totalCount, count } = this.props;
-    const { final } = this.state;
+    let { items, totalPrice, totalCount, count} = this.props;
     return (
       (totalCount !== 0 ? 
         <div>
@@ -118,7 +112,7 @@ class Basket extends Component {
               </tr>  
               <tr>
                 <td>مبلغ نهایی</td>
-                <td className={s.td}>{final.toLocaleString()}</td>
+                <td className={s.td}>{totalPrice}</td>
               </tr>      
               <tr className={s.empty}>
               <td>
@@ -140,22 +134,20 @@ class Basket extends Component {
 
 
 function mapStateToProps(state) {
+  const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
+  const count = state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
   function calculation (items) {
-    const calc = items.map(i => (i.price)).reduce((a, b) => a + b, 0)
+    const calc = items.map(i => (i.price)*(count)).reduce((a, b) => a + b, 0)
     return  (calc)
   }
-  const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
 
   return {
     items: fullItems,
     totalPrice: calculation(fullItems),
     totalCount: state.totalCount,
-    count: state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
+    count: count
     /*
-    count:   Object.keys(state.items).forEach(element => {
-      var count = (state.items[element].id)
-      console.log(count)
-    })
+      count: Object.keys(state.items).forEach(element => (state.items[element].count))
     */
   };
 }
@@ -164,6 +156,7 @@ function mapDispatchToProps(dispatch) {
   return {
     removeItem: item => dispatch(removeItem(item)),
     emptyBasket: () => dispatch(emptyBasket()),
+    calcFinal: totalPrice => dispatch(calcFinal(totalPrice))
   };
 }
 

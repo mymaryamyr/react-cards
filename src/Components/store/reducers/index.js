@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux';
-import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREMENT, ADD_DISCOUNT } from '../constants/action-types'
+import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREMENT, ADD_DISCOUNT, CALC_FINAL } from '../constants/action-types'
 import update from 'immutability-helper';
 
 Object.filter = function( obj, predicate) {
@@ -38,6 +38,11 @@ function basketReducer(state= initialState, action) {
             return {
                 ...state,
                 totalCount: state.totalCount + 1
+            }
+        case CALC_FINAL:
+            return {
+                ...state,
+                totalPrice: action.payload
             }
         case REMOVE_ITEM:
             const acceptedValue = [String(action.payload.id)]

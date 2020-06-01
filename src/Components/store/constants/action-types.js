@@ -8,3 +8,5 @@ export const EMPTY_BASKET = "EMPTY_BASKET"
 
 export const ADD_DISCOUNT = "ADD_DISCOUNT"
 
+export const CALC_FINAL = "CALC_FINAL"
+
