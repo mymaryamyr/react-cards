@@ -1,27 +1,39 @@
 import React, { useState } from "react";
 import { useHistory, useLocation } from "react-router-dom";
 import fakeAuth from "./fakeAuth";
-import s from './Form.module.css'
+import s from './Form.module.css';
+import useForm from './useForm';
+import validate from './LoginValidationRules';
 
 function LoginPage() {
   let history = useHistory();
   let location = useLocation();
   const [name, setName] = useState('');
-  const [mobile, setMobile] = useState('');
+  const [email, setEmail] = useState('');
   let { from } = location.state || { from: { pathname: "/home" } };
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+  } = useForm(print, validate);
+
+  function print() {
+    console.log(values);
+  }
 
   let login = (e) => {
     e.preventDefault()
     if(handleValidation) {
         const details = {
           'username' : name,
-          'mobile' : mobile,
+          'email' : email,
       }
       
       fakeAuth.authenticate(() => {
         history.replace(from);
         localStorage.setItem("username", name)
-        localStorage.setItem("mobile", mobile)
+        localStorage.setItem("email", email)
       });
     }
   };
@@ -51,11 +63,29 @@ function LoginPage() {
       خروج از حساب کاربری
     </button>
   ) : (
-    <form className={s.form}>
+    <form className={s.form} onSubmit={handleSubmit}>
       <p>لطفا وارد حساب کاربری شوید.</p>
-      <input className={s.input} onChange={e => setName(e.target.value)} />
-      <input className={s.input} onChange={e => setMobile(e.target.value)} />
-      <button className={s.button} onClick={login}>ورود</button>
+      <input 
+        className={s.input} 
+        onChange={handleChange} 
+        name="name" 
+        value={values.name || ''}
+        required
+      />
+      <input 
+        className={s.input} 
+        onChange={handleChange} 
+        name="email" 
+        value={values.email || ''}
+        required 
+      />
+      {errors.name && (
+        <p>{errors.name}</p>
+      )}
+      {errors.email && (
+        <p>{errors.email}</p>
+      )}
+      <button className={s.button} >ورود</button>
   </form>
   );
 }

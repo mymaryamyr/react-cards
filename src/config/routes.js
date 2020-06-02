@@ -7,6 +7,7 @@ import Home from "../Components/Home";
 import LoginPage from "../Components/Login/LoginPage";
 import LayoutMain from "../Components/Layouts/LayoutMain";
 import LayoutLanding from "../Components/Layouts/LayoutLanding";
+import PrivateRoute from "../Components/Layouts/PrivateRoute";
 
 const routes = [
     {
@@ -33,15 +34,15 @@ const routes = [
                 component: LoginPage,
             },
             {
+                title: "product",
+                path: "/product/:id",
+                component: Product,
+            },
+            {
                 title: "basket",
                 path: "/basket",
                 component: Basket,
                 private: true,
-            },
-            {
-                title: "product",
-                path: "/product/:id",
-                component: Product,
             }
         ]
     },
