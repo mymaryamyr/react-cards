@@ -25,15 +25,9 @@ function LoginPage() {
   let login = (e) => {
     e.preventDefault()
     if(handleValidation) {
-        const details = {
-          'username' : name,
-          'email' : email,
-      }
       
       fakeAuth.authenticate(() => {
         history.replace(from);
-        localStorage.setItem("username", name)
-        localStorage.setItem("email", email)
       });
     }
   };
