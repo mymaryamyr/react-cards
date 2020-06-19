@@ -6,6 +6,7 @@ import {
     Link
   } from "react-router-dom";
 import BasketDemo from './Shopping/Basket/Basket.demo';
+import Example from './AutoSuggest';
 
 
 class Navbar extends Component {
@@ -38,6 +39,7 @@ class Navbar extends Component {
                         </div>
                     </li>
                 </ul>
+                <Example/>
             </div>
     
         )

@@ -77,10 +77,10 @@ class Basket extends Component {
                         </Link>
                     </td>
                     <td>
-                      <p>{count}</p>
+                      <p>{item.count}</p>
                     </td>
                     <td>
-                        <p>{((item.price)*(count)).toLocaleString()}</p>
+                        <p>{((item.price)*(item.count)).toLocaleString()}</p>
                     </td>
                     <td>
                         <button onClick={() => {this.delete(item.id)}}>حذف</button>
@@ -134,21 +134,19 @@ class Basket extends Component {
 
 
 function mapStateToProps(state) {
-  const fullItems = Object.keys(state.items).map(idString => list.find(listItem => listItem.id.toString() == idString));
-  const count = state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
-  function calculation (items) {
-    const calc = items.map(i => (i.price)*(count)).reduce((a, b) => a + b, 0)
-    return  (calc)
-  }
+  const storeBasketItemIds = Object.keys(state.items);
+  const filteredList = list.filter(listItem => storeBasketItemIds.indexOf(listItem.id.toString()) !== -1);
+  const fullList = filteredList.map(item => {
+    return {
+      ...item,
+      ...state.items[item.id]
+    }
+  });
 
   return {
-    items: fullItems,
-    totalPrice: calculation(fullItems),
+    items: fullList,
+    totalPrice: fullList.reduce((acc, item) => (item.price * item.count) + acc, 0),
     totalCount: state.totalCount,
-    count: count
-    /*
-      count: Object.keys(state.items).forEach(element => (state.items[element].count))
-    */
   };
 }
 

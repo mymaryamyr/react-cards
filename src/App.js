@@ -8,7 +8,6 @@ import './App.css';
 import routes from './config/routes';
 import Err404 from './Components/Layouts/404';
 import PrivateRoute from './Components/Layouts/PrivateRoute';
-import Basket from './Components/Shopping/Basket/Basket';
 
 
 
@@ -24,10 +23,11 @@ function App() {
                 <Route key={i} {...subRoute} />
               )}
             </route.layout>
+            <PrivateRoute  path="/basket"/>
           </Route>
         )}
 
-        <PrivateRoute><Basket /></PrivateRoute>
+        
 
         <Route component={Err404} />
           
