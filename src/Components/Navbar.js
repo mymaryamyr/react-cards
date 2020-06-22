@@ -19,7 +19,7 @@ class Navbar extends Component {
     render () {
         const { totalCount } = this.props
         return (
-            <div>
+            <div className={s.navContainer}>
                 <ul className={s.navbar}>
                     <li><Link to='/listing'>Listing</Link></li>
                     <li><Link to="/about-us">About Us</Link></li>

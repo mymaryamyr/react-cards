@@ -68,7 +68,7 @@ const languages = [
       return [];
     }
   
-    const regex = new RegExp('^' + escapedValue, 'i');
+    const regex = new RegExp(escapedValue, 'i');
   
     return languages
       .map(section => {
@@ -131,7 +131,7 @@ const languages = [
     render() {
       const { value, suggestions } = this.state;
       const inputProps = {
-        placeholder: "Type 'c'",
+        placeholder: "کلمه زعفران یا زرشک...",
         value,
         onChange: this.onChange
       };

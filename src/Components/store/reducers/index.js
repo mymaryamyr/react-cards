@@ -1,6 +1,6 @@
 import { combineReducers } from 'redux';
 import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREMENT, ADD_DISCOUNT, CALC_FINAL } from '../constants/action-types'
-import update from 'immutability-helper';
+import produce from "immer"
 
 
 const initialState = {
@@ -24,13 +24,14 @@ function basketReducer(state= initialState, action) {
                 },
             }
         case INCREMENT:
-            return {
-                ...state,
-                totalCount: state.totalCount + 1
-            }
-
+            return produce(state, draft => {
+                draft.totalCount = draft.totalCount + 1
+              });
         case REMOVE_ITEM:
-
+            return produce(state, draft => {
+                draft.totalCount = draft.totalCount - draft.items[action.payload].count
+                delete draft.items[action.payload]
+              });
         case EMPTY_BASKET:
             return {
                 ...state,

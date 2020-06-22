@@ -1,3 +1,6 @@
+.navContainer {
+    position: relative;
+}
 .navbar {
     font-size: 16px;
     color: #333333;

@@ -1,12 +1,15 @@
 
 .react-autosuggest__container {
-    position: relative;
+    position: absolute;
     text-align: right;
+    top: 7px;
+    right: 30px;
+    line-height: 35px;
 }
 
 .react-autosuggest__input {
 width: 240px;
-height: 30px;
+height: 20px;
 padding: 10px 20px;
 font-family: Helvetica, sans-serif;
 font-weight: 300;
