@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { useHistory, useLocation } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useHistory, useLocation} from "react-router-dom";
 import fakeAuth from "./fakeAuth";
 import s from './Form.module.css';
 import useForm from './useForm';
@@ -16,8 +16,8 @@ function LoginPage() {
     errors,
     handleChange,
     handleSubmit,
-  } = useForm(print, validate);
-
+  } = useForm(print,validate);
+  
   function print() {
     console.log(values);
   }
