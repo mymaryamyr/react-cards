@@ -1,0 +1,30 @@
+.img {
+    display: inline-block;
+    width: 120px;
+}
+.outsideDiv {
+    margin: auto;
+    text-align: -webkit-right;
+    text-align: right;
+    position: relative;
+}
+.insideDiv {
+    left: 0;
+    width: 600px;
+    position: absolute;
+}
+.containerDiv {
+    margin: auto;
+    overflow: hidden;
+    height: 120px;
+    width: 300px;
+    display: inline-block;
+}
+.left {
+    left: -60px;
+}
+.arrow {
+    vertical-align: top;
+    padding: 30px;
+    width: 35px;
+}

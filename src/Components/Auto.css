@@ -56,6 +56,7 @@ list-style-type: none;
 }
 
 .react-autosuggest__suggestion {
+    width: 270px ;
     display: block;
     cursor: pointer;
     padding: 10px 20px;

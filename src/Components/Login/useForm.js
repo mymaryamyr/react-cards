@@ -4,8 +4,6 @@ const useForm = (callback, validate) => {
 
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -17,8 +15,6 @@ const useForm = (callback, validate) => {
   const handleSubmit = (event) => {
     if (event) event.preventDefault();
     setIsSubmitting(true);
-    localStorage.setItem("username", name)
-    localStorage.setItem("email", email)
     setErrors(validate(values));
   };
 
