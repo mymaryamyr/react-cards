@@ -34,7 +34,8 @@ class Navbar extends Component {
                         </Link>
                         <div className={s.div}>
                             {this.state.shown && (
-                                <BasketDemo />
+                                <BasketDemo 
+                                />
                             )}
                         </div>
                     </li>

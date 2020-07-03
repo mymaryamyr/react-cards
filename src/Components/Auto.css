@@ -1,8 +1,12 @@
-
+.no-suggestions {
+    position: absolute;
+    bottom: -34px;
+    right: 40px;
+}
 .react-autosuggest__container {
     position: absolute;
     text-align: right;
-    top: 7px;
+    bottom: 8px;
     right: 30px;
     line-height: 35px;
 }

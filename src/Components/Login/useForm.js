@@ -1,8 +1,11 @@
 import { useState, useEffect } from 'react';
+import { useHistory, useLocation} from "react-router-dom";
 
 const useForm = (callback, validate) => {
   
-
+  let history = useHistory();
+  let location = useLocation();
+  let { from } = location.state || { from: { pathname: "/home" } };
   const [values, setValues] = useState({});
   const [errors, setErrors] = useState({});
   const [name, setName] = useState('');
@@ -18,9 +21,10 @@ const useForm = (callback, validate) => {
   }, [errors]);
 
   const handleSubmit = (event) => {
+    if (Object.keys(validate(values)).length !== 0) event.preventDefault();
     setIsSubmitting(true);
     setErrors(validate(values));
-    if (Object.keys(validate(values)).length !== 0) event.preventDefault();
+
   };
 
   const handleChange = (event) => {

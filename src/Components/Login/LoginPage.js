@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { useHistory, useLocation} from "react-router-dom";
 import fakeAuth from "./fakeAuth";
 import s from './Form.module.css';
@@ -8,8 +8,6 @@ import validate from './LoginValidationRules';
 function LoginPage() {
   let history = useHistory();
   let location = useLocation();
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
   let { from } = location.state || { from: { pathname: "/home" } };
   const {
     values,
@@ -26,9 +24,7 @@ function LoginPage() {
     e.preventDefault()
     if(handleValidation) {
       
-      fakeAuth.authenticate(() => {
-        history.replace(from);
-      });
+      fakeAuth.authenticate(() => history.replace(from));
     }
   };
   function handleValidation () {
@@ -62,6 +58,7 @@ function LoginPage() {
       <input 
         className={s.input} 
         onChange={handleChange} 
+        placeholder="your name here..."
         name="name" 
         value={values.name || ''}
         required
@@ -69,6 +66,7 @@ function LoginPage() {
       <input 
         className={s.input} 
         onChange={handleChange} 
+        placeholder="your email here..."
         name="email" 
         value={values.email || ''}
         required 

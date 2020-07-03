@@ -11,7 +11,6 @@ const fakeAuth = {
   isAuthenticated: getlocalStorage(),
   authenticate(cb) {
     fakeAuth.isAuthenticated = true;
-    setTimeout(cb, 100); // fake async
   },
   signout(cb) {
     fakeAuth.isAuthenticated = false;

@@ -1,12 +1,11 @@
-import { combineReducers } from 'redux';
-import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREMENT, ADD_DISCOUNT, CALC_FINAL } from '../constants/action-types'
+import { ADD_ITEM, REMOVE_ITEM, EMPTY_BASKET, INCREMENT} from '../constants/action-types'
 import produce from "immer"
 
 
 const initialState = {
     items: [],
     totalCount : 0,
-    totalPrice: 0
+    text: ""
 };
 
 function basketReducer(state= initialState, action) {
@@ -37,7 +36,6 @@ function basketReducer(state= initialState, action) {
                 ...state,
                 items: {},
                 totalCount: 0,
-                totalPrice: 0
             }
         default:
             return state

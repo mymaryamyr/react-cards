@@ -123,7 +123,9 @@ function getSuggestions(value) {
   
       this.state = {
         value: '',
-        suggestions: []
+        suggestions: [],
+        noSuggestions: false,
+        focus: false,
       };    
     }
   
@@ -132,10 +134,20 @@ function getSuggestions(value) {
         value: newValue
       });
     };
+    onFocus = () => {
+      this.setState({ focus: true });
+    }
+    onBlur = () => {
+      this.setState({ focus: false });
+    }
     
     onSuggestionsFetchRequested = ({ value }) => {
+      const suggestions = getSuggestions(value);
+      const isInputBlank = value.trim() === '';
+      const noSuggestions = !isInputBlank && suggestions.length === 0;
       this.setState({
-        suggestions: getSuggestions(value)
+        suggestions,
+        noSuggestions
       });
     };
   
@@ -150,20 +162,34 @@ function getSuggestions(value) {
       const inputProps = {
         placeholder: "کلمه زعفران یا زرشک...",
         value,
-        onChange: this.onChange
+        onChange: this.onChange,
+        onFocus: this.onFocus,
+        onBlur: this.onBlur,
       };
   
       return (
-        <Autosuggest 
-          multiSection={true}
-          suggestions={suggestions}
-          onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
-          onSuggestionsClearRequested={this.onSuggestionsClearRequested}
-          getSuggestionValue={getSuggestionValue}
-          renderSuggestion={renderSuggestion}
-          renderSectionTitle={renderSectionTitle}
-          getSectionSuggestions={getSectionSuggestions}
-          inputProps={inputProps} />
+        <div>
+          <Autosuggest 
+            multiSection={true}
+            suggestions={suggestions}
+            onSuggestionsFetchRequested={this.onSuggestionsFetchRequested}
+            onSuggestionsClearRequested={this.onSuggestionsClearRequested}
+            getSuggestionValue={getSuggestionValue}
+            renderSuggestion={renderSuggestion}
+            renderSectionTitle={renderSectionTitle}
+            getSectionSuggestions={getSectionSuggestions}
+            inputProps={inputProps} 
+            onFocus={this.onFocus}
+            onBlur={this.onBlur}
+          />
+          {
+            this.state.noSuggestions && this.state.focus &&
+              <div className="no-suggestions">
+                <p>کلمه مورد نظر یافت نشد</p>
+              </div>
+          }
+        </div>
+
       );
     }
   }

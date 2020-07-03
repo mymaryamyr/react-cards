@@ -54,13 +54,6 @@ class Product extends Component {
     }    
 }
 
-/*
-function mapStateToProps(state) {
-    return {
-        count: state.items[Object.keys(state.items).find(idString => list.find(listItem => listItem.id.toString() == idString))].count
-    }
-}
-*/
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),

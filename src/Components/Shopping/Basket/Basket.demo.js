@@ -2,18 +2,11 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import list from '../../../data.json'
 import { Link } from 'react-router-dom';
-import { removeItem, emptyBasket } from '../../store/actions/index'
 import s from './BasketDemo.module.css'
 
 class BasketDemo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-    }
-  }
   render () {
-    let { items, totalPrice, totalCount, count } = this.props;
-    const { final } = this.state;
+    let { items, totalPrice, totalCount } = this.props;
     return (
       (totalCount !== 0 ? 
         <div className={s.div}

@@ -23,19 +23,19 @@ class AboutUs extends Component {
                 <h2>About</h2>
                 <p>hfbuhvcbdslnfcuwfhqeubhewfnlwenkjd</p>
                 <div>
-                    <img src={arrowImg} className={s.arrow} onClick={this.nextArrow}/>
+                    <img src={arrowImg} className={s.arrow} onClick={this.nextArrow} alt="arrow"/>
                     <div className={s.containerDiv}>
                         <div className={s.outsideDiv}>
                             <div className={`${s.insideDiv} ${activeClass}`} >
-                                <img src={slideImg} className={s.img}/>
-                                <img src={slideImg} className={s.img}/>
-                                <img src={slideImg} className={s.img}/>
-                                <img src={slideImg} className={s.img}/>
-                                <img src={slideImg} className={s.img}/>
+                                <img src={slideImg} className={s.img} alt="slider"/>
+                                <img src={slideImg} className={s.img} alt="slider"/>
+                                <img src={slideImg} className={s.img} alt="slider"/>
+                                <img src={slideImg} className={s.img} alt="slider"/>
+                                <img src={slideImg} className={s.img} alt="slider"/>
                             </div>
                         </div>
                     </div>
-                    <img src={arrowImg} className={s.arrow}/>
+                    <img src={arrowImg} className={s.arrow} alt="arrow" />
             
                 </div>      
             </div>

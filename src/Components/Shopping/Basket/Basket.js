@@ -6,6 +6,12 @@ import { Link } from 'react-router-dom';
 import { removeItem, emptyBasket, calcFinal } from '../../store/actions/index'
 
 class Basket extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      discountedPrice: this.props.totalPrice.toLocaleString()
+    }
+  }
   delete = (id) => {
     const { removeItem } = this.props;
     removeItem(id)
@@ -15,38 +21,30 @@ class Basket extends Component {
     emptyBasket()
   }
   discount = () => {
-    const { calcFinal ,totalPrice} = this.props;
-    calcFinal(totalPrice)
-
+    const { totalPrice} = this.props;
     const input = document.getElementById("discount-input")
 
     if (input.value === "keshmoon10") {
 
-      if(totalPrice > 200000) {
-        calcFinal((totalPrice - 20000).toLocaleString())
-        return totalPrice
+      if(totalPrice > 100000) {
+        this.setState({discountedPrice: (totalPrice - 10000).toLocaleString()})
+
       } else {
-        calcFinal((Math.round(9 * totalPrice) / 10).toLocaleString())
-        return totalPrice
+        this.setState({discountedPrice: (Math.round(9 * totalPrice) / 10).toLocaleString()})
       }
     } else if (input.value === "keshmoon20") {
 
       if(totalPrice < 20000) {
-        calcFinal(0)
-        return 0
+        this.setState({discountedPrice: 0})
       } else {
-        calcFinal((totalPrice - 20000).toLocaleString())
-        return totalPrice
+        this.setState({discountedPrice: (totalPrice - 20000).toLocaleString()})
       }
     } 
   }
-  changeQuantity = () => {
-    const value = document.getElementById("selectQuantityBasket").value
-    
-    console.log(value)
-  }
+  
   render () {
-    let { items, totalPrice, totalCount, count} = this.props;
+    let { items, totalPrice, totalCount} = this.props;
+    let { discountedPrice } = this.state
     return (
       (totalCount !== 0 ? 
         <div>
@@ -93,7 +91,7 @@ class Basket extends Component {
             <tbody>
               <tr>
                 <td>مجموع</td>
-                <td className={s.td}>{totalPrice}</td>
+                <td className={s.td}>{totalPrice.toLocaleString()}</td>
               </tr>
               <tr>
                 <td>کدتخفیف</td>
@@ -112,7 +110,7 @@ class Basket extends Component {
               </tr>  
               <tr>
                 <td>مبلغ نهایی</td>
-                <td className={s.td}>{totalPrice}</td>
+                <td className={s.td}>{discountedPrice}</td>
               </tr>      
               <tr className={s.empty}>
               <td>
@@ -142,7 +140,6 @@ function mapStateToProps(state) {
       ...state.items[item.id]
     }
   });
-
   return {
     items: fullList,
     totalPrice: fullList.reduce((acc, item) => (item.price * item.count) + acc, 0),
