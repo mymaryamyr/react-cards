@@ -1,21 +1,20 @@
 function getlocalStorage () {
   if (localStorage.getItem("username") &&
       localStorage.getItem("email")
-  ) return true
+  ) return true;
   else {
-    return false
+    return false;
   }
 }
-
 const fakeAuth = {
   isAuthenticated: getlocalStorage(),
-  authenticate(cb) {
+  authenticate() {
     fakeAuth.isAuthenticated = true;
   },
   signout(cb) {
     fakeAuth.isAuthenticated = false;
-    localStorage.removeItem("username")
-    localStorage.removeItem("email")
+    localStorage.removeItem("username");
+    localStorage.removeItem("email");
     setTimeout(cb, 100);
   }
 };

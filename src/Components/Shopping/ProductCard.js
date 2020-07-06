@@ -2,7 +2,6 @@ import React from 'react';
 import '../../App.css'
 import s from './Card.module.css';
 import {
-    BrowserRouter as Router,
     Link
   } from "react-router-dom";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
