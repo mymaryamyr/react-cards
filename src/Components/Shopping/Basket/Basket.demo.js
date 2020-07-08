@@ -2,7 +2,8 @@ import React, {Component} from 'react';
 import { connect } from 'react-redux';
 import list from '../../../data.json'
 import { Link } from 'react-router-dom';
-import s from './BasketDemo.module.css'
+import s from './BasketDemo.module.css';
+import { totalCount } from '../../store/selectors/basketSelector'
 
 class BasketDemo extends Component {
   render () {
@@ -31,7 +32,7 @@ class BasketDemo extends Component {
                           </Link>  
                       </td>
                       <td>
-                      <p>{item.count}</p>
+                        <p>{item.count}</p>
                       </td>
                       <td>
                           <p>{(totalPrice).toLocaleString()}</p>
@@ -65,7 +66,7 @@ function mapStateToProps(state) {
   return {
     items: fullList,
     totalPrice: fullList.reduce((acc, item) => (item.price * item.count) + acc, 0),
-    totalCount: state.totalCount,
+    totalCount: totalCount(state),
   };
 }
 

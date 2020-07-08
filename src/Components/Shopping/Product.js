@@ -7,7 +7,7 @@ import {
 import { connect } from 'react-redux';
 import ProductCard from './ProductCard';
 import list from '../../data.json'
-import { addItem, increment } from "../store/actions/index";
+import { addItem } from "../store/actions/index";
 import s from './Card.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
@@ -18,14 +18,8 @@ class Product extends Component {
     handleClick = (e) => {
         const id = this.props.match.params.id;
         const value = document.getElementById("selectQuantity").value
-        let { totalCount, count } = this.props
-        const { addItem, increment } = this.props
-        for(let i=0; i < value; i++ ) {
-            addItem( { id } );
-            increment( { totalCount } )
-            count = count + value
-
-        }
+        const { addItem } = this.props
+        addItem( {id, qty: value})
     }
     render() {
         const id = this.props.match.params.id;
@@ -57,7 +51,6 @@ class Product extends Component {
 function mapDispatchToProps(dispatch) {
     return {
       addItem: item => dispatch(addItem(item)),
-      increment: totalCount => dispatch(increment(totalCount))
     };
 }
 export default withRouter(connect(null, mapDispatchToProps)(Product))

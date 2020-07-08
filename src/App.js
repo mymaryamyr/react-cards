@@ -10,14 +10,13 @@ import Err404 from './Components/Layouts/404';
 import PrivateRoute from './Components/Layouts/PrivateRoute';
 
 
-
 function App() {
   return (
     <Router>
       <Switch>
 
         {routes.map((route,i)=>
-          <Route key={i} path={route.subRoutes.map(r=>r.path)}>
+          <Route exact key={i} path={route.subRoutes.map(r=>r.path)}>
             <route.layout>
               {route.subRoutes.map((subRoute,i)=>
                 <Route key={i} {...subRoute} />

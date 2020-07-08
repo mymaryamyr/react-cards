@@ -3,7 +3,7 @@ import basketReducer from './reducers/index';
 
 const persistedState = localStorage.getItem('reduxState') 
                        ? JSON.parse(localStorage.getItem('reduxState'))
-                       : {"items":{},"totalCount":0,"totalPrice":0}
+                       : {"items":{}}
 const store = createStore(basketReducer, persistedState)
 window.store = store
 

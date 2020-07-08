@@ -4,6 +4,7 @@ import list from '../../../data.json'
 import s from './BasketDetail.module.css'
 import { Link } from 'react-router-dom';
 import { removeItem, emptyBasket, calcFinal } from '../../store/actions/index'
+import { totalCount } from '../../store/selectors/basketSelector'
 
 class Basket extends Component {
   constructor(props) {
@@ -143,7 +144,7 @@ function mapStateToProps(state) {
   return {
     items: fullList,
     totalPrice: fullList.reduce((acc, item) => (item.price * item.count) + acc, 0),
-    totalCount: state.totalCount,
+    totalCount: totalCount(state),
   };
 }
 

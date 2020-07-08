@@ -7,6 +7,7 @@ import {
   } from "react-router-dom";
 import BasketDemo from './Shopping/Basket/Basket.demo';
 import Example from './AutoSuggest';
+import { totalCount } from './store/selectors/basketSelector';
 
 
 class Navbar extends Component {
@@ -17,7 +18,7 @@ class Navbar extends Component {
         }
     }
     render () {
-        const { totalCount } = this.props
+        const { totalItems } = this.props
         return (
             <div className={s.navContainer}>
                 <ul className={s.navbar}>
@@ -29,7 +30,7 @@ class Navbar extends Component {
                             onMouseEnter={()=> this.setState({shown: true})}
                             onMouseLeave={()=> this.setState({shown: false})}
                         >
-                            <span>{totalCount}</span>
+                            <span>{totalItems}</span>
                             <span className={s.span}>Basket</span>
                         </Link>
                         <div className={s.div}>
@@ -49,7 +50,7 @@ class Navbar extends Component {
 
 function mapStateToProps(state) {
     return {
-        totalCount: state.totalCount,
+        totalItems: totalCount(state),
     };
 }
 
