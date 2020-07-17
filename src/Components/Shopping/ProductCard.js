@@ -7,17 +7,19 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
+import { useTranslation } from 'react-i18next';
 
 function ProductCard(props) {
+    const { t } = useTranslation();
     return (
         <div className={`${s.card} ${s.a}`}> 
-            <p>id: {props.product.id}</p>
+            <p>{t("productCard.id")} : {props.product.id}</p>
             <img src={props.product.product_thumb_url} alt="Saffron"></img>
-            <p>product_type: {props.product.product_type}</p>
-            <p>product_name: {props.product.product_name}</p>
-            <p>weight: {props.product.weight}</p>
-            <p>price: {(props.product.price).toLocaleString()}</p>
-            <button onClick={props.onClick} className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>{props.ShowBuy ? "خرید" : "مشاهده"}</Link></button>
+            <p>{t("productCard.type")} : {props.product.product_type}</p>
+            <p>{t("productCard.name")} : {t("productCard.saffron")}</p>
+            <p>{t("productCard.weight")} : {props.product.weight}</p>
+            <p>{t("productCard.price")} : {(props.product.price).toLocaleString()}</p>
+            <button onClick={props.onClick} className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>{t("productCard.details")}</Link></button>
             <div className={s.footer}>
                 <img className={s.img} src={props.product.farmer_thumb} alt="farmer in the land"></img>
                 <p className={s.name}>{props.product.farmer_name}</p>

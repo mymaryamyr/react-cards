@@ -1,0 +1,55 @@
+{
+    "welcome": {
+        "title": "Welcome to Keshmoon"
+    },
+    "login": {
+        "exit": "Exit",
+        "alert": "please sign in first",
+        "login": "Sign in",
+        "placeholder-name" : "your name here",
+        "placeholder-email" : "your email here"
+    },
+    "basket": {
+        "image" : "Image",
+        "id" : "Id",
+        "qty" : "Quantity",
+        "price" : "Price",
+        "remove" : "Remove",
+        "total" : "Total Amount",
+        "discount" : "Discount Code",
+        "push" : "Push",
+        "final" : "Final Price",
+        "empty" : "Empty the Basket"
+    },
+    "basketDemo": {
+        "image" : "Image",
+        "qty" : "Quantity",
+        "price" : "Price"
+    },
+    "product": {
+        "id" : "id",
+        "weight" : "weight",
+        "price" : "price",
+        "buy" : "Add"
+    },
+    "productCard": {
+        "id" : "id",
+        "type" : "Product Type",
+        "name" : "Product Name",
+        "weight" : "weight",
+        "price" : "price",
+        "saffron" : "Saffron",
+        "details" : "Details",
+        "buy" : "Add to Cart"
+    },
+    "navbar": {
+        "basket" : "Basket",
+        "about-us" : "About Us",
+        "login" : "Login",
+        "listing" : "Listing"
+    },
+    "about": {
+        "title": "About Us",
+        "description": "Welcome to the online portal for Keshmoon farmers, which saffron farmers are selling their products. You can view their profile and their life story by clicking on each of the farmer’s names."
+    }
+}

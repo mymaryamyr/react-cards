@@ -4,8 +4,10 @@ import fakeAuth from "./fakeAuth";
 import s from './Form.module.css';
 import useForm from './useForm';
 import validate from './LoginValidationRules';
+import {  useTranslation } from "react-i18next";
 
 function LoginPage() {
+  const { t } = useTranslation();
   let history = useHistory();
   let location = useLocation();
   let { from } = location.state || { from: { pathname: "/home" } };
@@ -50,15 +52,15 @@ function LoginPage() {
         fakeAuth.signout(() => history.push("/home"));
       }}
     >
-      خروج از حساب کاربری
+      {t("login.exit")}
     </button>
   ) : (
     <form className={s.form} onSubmit={handleSubmit}>
-      <p>لطفا وارد حساب کاربری شوید.</p>
+      <p>{t("login.alert")}</p>
       <input 
         className={s.input} 
         onChange={handleChange} 
-        placeholder="your name here..."
+        placeholder={t("login.placeholder-name")}
         name="name" 
         value={values.name || ''}
         required
@@ -66,7 +68,7 @@ function LoginPage() {
       <input 
         className={s.input} 
         onChange={handleChange} 
-        placeholder="your email here..."
+        placeholder={t("login.placeholder-email")}
         name="email" 
         value={values.email || ''}
         required 
@@ -77,7 +79,7 @@ function LoginPage() {
       {errors.email && (
         <p>{errors.email}</p>
       )}
-      <button className={s.button} >ورود</button>
+      <button className={s.button} >{t("login.login")}</button>
   </form>
   );
 }

@@ -4,10 +4,13 @@ import list from '../../../data.json'
 import { Link } from 'react-router-dom';
 import s from './BasketDemo.module.css';
 import { totalCount } from '../../store/selectors/basketSelector'
+import {  withTranslation } from "react-i18next";
+
 
 class BasketDemo extends Component {
   render () {
     let { items, totalPrice, totalCount } = this.props;
+    const { t } = this.props
     return (
       (totalCount !== 0 ? 
         <div className={s.div}
@@ -15,9 +18,9 @@ class BasketDemo extends Component {
           <table className={s.table}>
             <thead>
               <tr className={s.tr}>
-                <td>عکس</td>
-                <td>تعداد</td>
-                <td>قیمت</td>
+                <td>{t("basketDemo.image")}</td>
+                <td>{t("basketDemo.qty")}</td>
+                <td>{t("basketDemo.price")}</td>
               </tr>
             </thead>
             {items.map((item, id) => (
@@ -71,4 +74,4 @@ function mapStateToProps(state) {
 }
 
 
-export default connect(mapStateToProps)(BasketDemo);
+export default connect(mapStateToProps)(withTranslation()(BasketDemo));

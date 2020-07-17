@@ -12,7 +12,7 @@ import s from './Card.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
-
+import {  withTranslation } from "react-i18next";
 
 class Product extends Component {
     handleClick = (e) => {
@@ -22,13 +22,14 @@ class Product extends Component {
         addItem( {id, qty: value})
     }
     render() {
+        const { t } = this.props
         const id = this.props.match.params.id;
         const product = list.find(i => i.id == id)
         return (
             <div className={`${s.card} ${s.a}`}> 
-                <p>id: {product.id}</p>
-                <p>weight: {product.weight}</p>
-                <p>price: {(product.price).toLocaleString()}</p>
+                <p>{t("product.id")} : {product.id}</p>
+                <p>{t("product.weight")} : {product.weight}</p>
+                <p>{t("product.price")} : {(product.price).toLocaleString()}</p>
                 <select id="selectQuantity" className={s.select}>
                     <option value="1">1</option>
                     <option value="2">2</option>
@@ -36,7 +37,7 @@ class Product extends Component {
                     <option value="4">4</option>
                     <option value="5">5</option>
                 </select>
-                <button onClick={this.handleClick} className={s.button}><Link className={s.link} to={'/product/' + product.id}>خرید</Link></button>
+                <button onClick={this.handleClick} className={s.button}><Link className={s.link} to={'/product/' + product.id}>{t("product.buy")}</Link></button>
                 <div className={s.footer}>
                     <p className={s.name}>{product.farmer_name}</p>
                     <p className={s.score}>{product.quality_score}</p>
@@ -53,4 +54,4 @@ function mapDispatchToProps(dispatch) {
       addItem: item => dispatch(addItem(item)),
     };
 }
-export default withRouter(connect(null, mapDispatchToProps)(Product))
+export default connect(null, mapDispatchToProps)(withTranslation()(Product));

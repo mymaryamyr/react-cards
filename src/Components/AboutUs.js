@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import slideImg from "../img/safron.png"
 import arrowImg from '../img/icon.png'
-import s from './AboutUs.module.css'
+import s from './AboutUs.module.css';
+import {  withTranslation } from "react-i18next";
 
 class AboutUs extends Component {
     constructor(props) {
@@ -18,10 +19,12 @@ class AboutUs extends Component {
     }
     render() {
         const activeClass = this.state.active ? s.left : null
+        const { t } = this.props;
+
         return (
             <div>
-                <h2>About</h2>
-                <p>hfbuhvcbdslnfcuwfhqeubhewfnlwenkjd</p>
+                <h2>{t("about.title")}</h2>
+                <p style={{maxWidth: '600px',margin: 'auto'}}>{t("about.description")}</p>
                 <div>
                     <img src={arrowImg} className={s.arrow} onClick={this.nextArrow} alt="arrow"/>
                     <div className={s.containerDiv}>
@@ -45,4 +48,4 @@ class AboutUs extends Component {
 
 }
 
-export default AboutUs;
+export default withTranslation()(AboutUs);

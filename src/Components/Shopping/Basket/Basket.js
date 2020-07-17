@@ -4,7 +4,9 @@ import list from '../../../data.json'
 import s from './BasketDetail.module.css'
 import { Link } from 'react-router-dom';
 import { removeItem, emptyBasket, calcFinal } from '../../store/actions/index'
-import { totalCount } from '../../store/selectors/basketSelector'
+import { totalCount } from '../../store/selectors/basketSelector';
+import {  withTranslation } from "react-i18next";
+
 
 class Basket extends Component {
   constructor(props) {
@@ -44,7 +46,7 @@ class Basket extends Component {
   }
   
   render () {
-    let { items, totalPrice, totalCount} = this.props;
+    let { items, totalPrice, totalCount, t } = this.props;
     let { discountedPrice } = this.state
     return (
       (totalCount !== 0 ? 
@@ -52,11 +54,11 @@ class Basket extends Component {
           <table className={s.table}>
             <thead>
               <tr className={s.tr}>
-                <td>عکس</td>
-                <td>آیدی</td>
-                <td>تعداد</td>
-                <td>قیمت</td>
-                <td>حذف</td>
+                <td>{t("basket.image")}</td>
+                <td>{t("basket.id")}</td>
+                <td>{t("basket.qty")}</td>
+                <td>{t("basket.price")}</td>
+                <td>{t("basket.remove")}</td>
               </tr>
             </thead>
           {items.map((item, id) => (
@@ -82,7 +84,7 @@ class Basket extends Component {
                         <p>{((item.price)*(item.count)).toLocaleString()}</p>
                     </td>
                     <td>
-                        <button onClick={() => {this.delete(item.id)}}>حذف</button>
+                        <button onClick={() => {this.delete(item.id)}}>{t("basket.remove")}</button>
                     </td>
                 </tr>           
             </tbody>
@@ -91,11 +93,11 @@ class Basket extends Component {
           <table className={s.table}>
             <tbody>
               <tr>
-                <td>مجموع</td>
+                <td>{t("basket.total")}</td>
                 <td className={s.td}>{totalPrice.toLocaleString()}</td>
               </tr>
               <tr>
-                <td>کدتخفیف</td>
+                <td>{t("basket.discount")}</td>
                 <td className={s.td}>
                   <input 
                     className={s.input}
@@ -105,17 +107,17 @@ class Basket extends Component {
                     className={s.inputBtn}
                     onClick={this.discount}
                   >
-                    اعمال کد
+                  {t("basket.push")}
                   </button>
                 </td>
               </tr>  
               <tr>
-                <td>مبلغ نهایی</td>
+                <td>{t("basket.final")}</td>
                 <td className={s.td}>{discountedPrice}</td>
               </tr>      
               <tr className={s.empty}>
               <td>
-              <button onClick={this.deleteAll}>خالی کردن سبد</button>
+              <button onClick={this.deleteAll}>{t("basket.empty")}</button>
               </td>
               </tr>            
             </tbody>
@@ -156,4 +158,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Basket);
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(Basket));;
