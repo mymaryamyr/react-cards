@@ -1,5 +1,5 @@
-import React from 'react';  
-import { Route } from 'react-router-dom';  
+import React from 'react';   
+import PropTypes from 'prop-types';
 
 const LayoutLanding = ({ children }) => {
   return (
@@ -8,7 +8,8 @@ const LayoutLanding = ({ children }) => {
     </div>
   );
 }
-
-  
+LayoutLanding.propTypes = {
+  children: PropTypes.node
+}
   
 export default LayoutLanding; 

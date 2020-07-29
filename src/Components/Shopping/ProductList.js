@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ProductCard from './ProductCard';
 import styles from './Card.module.css';
-
+import ProductCard from './ProductCard'
+import PropTypes from 'prop-types';
 
 class ProductList extends Component {
     constructor (props) {
@@ -74,6 +74,9 @@ class ProductList extends Component {
             </li>  
         )
     }
+}
+ProductList.propTypes = {
+    list: PropTypes.array
 }
 
 export default ProductList;

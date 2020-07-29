@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import {
-    BrowserRouter as Router,
-    withRouter,
     Link,
 } from "react-router-dom";
 import { connect } from 'react-redux';
-import ProductCard from './ProductCard';
 import list from '../../data.json'
 import { addItem } from "../store/actions/index";
 import s from './Card.module.css';
@@ -13,9 +10,30 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 import {  withTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
 
+/*
+    componentDidMount() {
+        fetch("http://localhost:4000/product")
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    this.setState({
+                        isLoaded:true,
+                        list: result.list
+                    });
+                },
+                (error) => {
+                    this.setState({
+                        isLoaded: true,
+                        error
+                    });
+                }
+        )
+    }
+*/
 class Product extends Component {
-    handleClick = (e) => {
+    handleClick = () => {
         const id = this.props.match.params.id;
         const value = document.getElementById("selectQuantity").value
         const { addItem } = this.props
@@ -48,6 +66,15 @@ class Product extends Component {
         )
     }    
 }
+Product.propTypes = {
+    addItem: PropTypes.func,
+    t: PropTypes.func,
+    match: PropTypes.shape({
+        params: PropTypes.shape({
+          id: PropTypes.number.isRequired
+        })
+    }),
+  }
 
 function mapDispatchToProps(dispatch) {
     return {

@@ -3,6 +3,7 @@ import slideImg from "../img/safron.png"
 import arrowImg from '../img/icon.png'
 import s from './AboutUs.module.css';
 import {  withTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
 
 class AboutUs extends Component {
     constructor(props) {
@@ -44,8 +45,9 @@ class AboutUs extends Component {
             </div>
         )
     }
-
-
 }
+AboutUs.propTypes = {
+    t: PropTypes.func,
+  }
 
 export default withTranslation()(AboutUs);

@@ -15,21 +15,21 @@ function App() {
     <Router>
       <Switch>
 
-        {routes.map((route,i)=>
-          <Route exact key={i} path={route.subRoutes.map(r=>r.path)}>
+        {routes.map((route, i) =>
+          <Route exact key={i} path={route.subRoutes.map(r => r.path)}>
             <route.layout>
-              {route.subRoutes.map((subRoute,i)=>
-                <Route key={i} {...subRoute} />
+              {route.subRoutes.map((subRoute, i) =>
+                <Route exact key={i} {...subRoute} />
               )}
             </route.layout>
-            <PrivateRoute  path="/basket"/>
+            <PrivateRoute path="/basket" />
           </Route>
         )}
 
-        
+
 
         <Route component={Err404} />
-          
+
       </Switch>
     </Router>
   );

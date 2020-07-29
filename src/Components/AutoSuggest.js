@@ -1,8 +1,8 @@
 import Autosuggest from 'react-autosuggest';
 import * as AutosuggestHighlightMatch from 'autosuggest-highlight/match';
 import * as AutosuggestHighlightParse from 'autosuggest-highlight/parse';
-import React, {Component} from 'react';
-import Auto from './Auto.css'
+import React from 'react';
+import './Auto.css'
 
 const products = [
   {
@@ -129,7 +129,7 @@ function getSuggestions(value) {
       };    
     }
   
-    onChange = (event, { newValue, method }) => {
+    onChange = (event, { newValue }) => {
       this.setState({
         value: newValue
       });

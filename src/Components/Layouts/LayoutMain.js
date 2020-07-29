@@ -1,9 +1,7 @@
 import React from 'react';  
-import { Route, Link } from 'react-router-dom';  
 import Navbar from '../Navbar';
-import routes from '../../config/routes'
+import PropTypes from 'prop-types';
   
-
 const LayoutMain = ({ children }) => {
     return (
       <div>
@@ -11,6 +9,9 @@ const LayoutMain = ({ children }) => {
         {children}
       </div>
     )
+}
+LayoutMain.propTypes = {
+  children: PropTypes.node
 }
  
 export default LayoutMain; 

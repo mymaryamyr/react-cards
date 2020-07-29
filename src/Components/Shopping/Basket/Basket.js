@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { removeItem, emptyBasket, calcFinal } from '../../store/actions/index'
 import { totalCount } from '../../store/selectors/basketSelector';
 import {  withTranslation } from "react-i18next";
-
+import PropTypes from 'prop-types';
 
 class Basket extends Component {
   constructor(props) {
@@ -132,6 +132,14 @@ class Basket extends Component {
     )
   }
 }
+Basket.propTypes = {
+  totalPrice: PropTypes.number,
+  totalCount: PropTypes.number,
+  removeItem: PropTypes.func,
+  emptyBasket: PropTypes.func,
+  t: PropTypes.func,
+  items: PropTypes.array
+}
 
 
 function mapStateToProps(state) {
@@ -158,4 +166,4 @@ function mapDispatchToProps(dispatch) {
   };
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(Basket));;
+export default connect(mapStateToProps, mapDispatchToProps)(withTranslation()(Basket));

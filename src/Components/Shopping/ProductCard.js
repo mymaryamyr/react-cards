@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
 import { useTranslation } from 'react-i18next';
+import PropTypes from 'prop-types';
 
 function ProductCard(props) {
     const { t } = useTranslation();
@@ -30,6 +31,10 @@ function ProductCard(props) {
             
         </div>
     );
+}
+ProductCard.propTypes = {
+    product: PropTypes.object,
+    onClick: PropTypes.func
 }
 
 export default ProductCard;

@@ -8,7 +8,7 @@ const initialState = {
 
 function basketReducer(state= initialState, action) {
         switch ( action.type) {
-        case ADD_ITEM:
+        case ADD_ITEM: {
             const qty = Number(action.payload.qty) || 1
             return {
                 ...state,
@@ -21,16 +21,18 @@ function basketReducer(state= initialState, action) {
                     }
                 },
             }
- 
-        case REMOVE_ITEM:
+        }
+        case REMOVE_ITEM: {
             return produce(state, draft => {
                 delete draft.items[action.payload]
               });
-        case EMPTY_BASKET:
+            }
+        case EMPTY_BASKET: {
             return {
                 ...state,
                 items: {}
             }
+        }
         default:
             return state
     }

@@ -14,7 +14,7 @@ const routes = [
         subRoutes:[
             {
                 title: "home",
-                path: "/home",
+                path: "/",
                 component: Home,
             },
             {

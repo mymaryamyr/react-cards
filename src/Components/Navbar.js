@@ -2,13 +2,13 @@ import React, {Component} from 'react';
 import s from './Navbar.module.css'
 import { connect } from 'react-redux';
 import {
-    BrowserRouter as Router,
     Link
   } from "react-router-dom";
 import BasketDemo from './Shopping/Basket/Basket.demo';
 import Example from './AutoSuggest';
 import { totalCount } from './store/selectors/basketSelector';
 import {  withTranslation } from "react-i18next";
+import PropTypes from 'prop-types';
 
 class Navbar extends Component {
     constructor (props) {
@@ -54,7 +54,12 @@ class Navbar extends Component {
         )
     }
 }
-
+Navbar.propTypes = {
+    totalItems: PropTypes.number,
+    changeLanguage: PropTypes.func,
+    t: PropTypes.func,
+    i18n: PropTypes.object,
+}
 function mapStateToProps(state) {
     return {
         totalItems: totalCount(state),

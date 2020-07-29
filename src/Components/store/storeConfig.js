@@ -1,4 +1,4 @@
-import { createStore, combineReducers } from 'redux';
+import { createStore } from 'redux';
 import basketReducer from './reducers/index';
 
 const persistedState = localStorage.getItem('reduxState') 

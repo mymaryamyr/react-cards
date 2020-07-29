@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import s from './BasketDemo.module.css';
 import { totalCount } from '../../store/selectors/basketSelector'
 import {  withTranslation } from "react-i18next";
-
+import PropTypes from 'prop-types';
 
 class BasketDemo extends Component {
   render () {
@@ -54,7 +54,12 @@ class BasketDemo extends Component {
     )
   }
 }
-
+BasketDemo.propTypes = {
+  totalPrice: PropTypes.number,
+  totalCount: PropTypes.number,
+  t: PropTypes.func,
+  items: PropTypes.array
+}
 
 function mapStateToProps(state) {
   const storeBasketItemIds = Object.keys(state.items);
