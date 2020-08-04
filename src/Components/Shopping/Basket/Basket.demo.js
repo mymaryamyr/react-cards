@@ -8,12 +8,34 @@ import {  withTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
 
 class BasketDemo extends Component {
+  state = {
+    stay: false
+  }
+  handleHoverDemo = () => {
+    this.setState({stay: true}, () => {
+      if(this.props.onMouseEnter) {
+        this.props.onMouseEnter(this.state.stay);
+      }
+    })
+  }
+  handleLeaveDemo = () => {
+    this.setState({stay: false}, () => {
+      if(this.props.onMouseLeave) {
+        setTimeout(() => {
+          this.props.onMouseLeave(this.state.stay);
+        }, 1000);
+      }
+    })
+  }
   render () {
     let { items, totalPrice, totalCount } = this.props;
     const { t } = this.props
     return (
       (totalCount !== 0 ? 
-        <div className={s.div}
+        <div 
+          className={s.div} 
+          onMouseEnter={this.handleHoverDemo} 
+          onMouseLeave={this.handleLeaveDemo}
         >
           <table className={s.table}>
             <thead>

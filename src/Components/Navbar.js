@@ -14,20 +14,27 @@ class Navbar extends Component {
     constructor (props) {
         super(props);
         this.state = {
-            shown: false
+            shown: false,
         }
+    }
+    handleHover = (value) => {
+        this.setState({stay: value});
+    }
+    handleLeave = (value) => {
+        this.setState({stay: value});
     }
     render () {
         const { totalItems, i18n, t } = this.props
         const changeLanguage = lng => {
             i18n.changeLanguage(lng);
-          };
+        };
+        console.log(this.state)
         return (
             <div className={s.navContainer}>
-            <div className={s.langContainer}>
-                <button onClick={() => changeLanguage("fa")}>fa</button>
-                <button onClick={() => changeLanguage("en")}>en</button>
-            </div>
+                <div className={s.langContainer}>
+                    <button onClick={() => changeLanguage("fa")}>fa</button>
+                    <button onClick={() => changeLanguage("en")}>en</button>
+                </div>
                 <ul className={s.navbar}>
                     <li><Link to='/listing'>{t("navbar.listing")}</Link></li>
                     <li><Link to="/about-us">{t("navbar.about-us")}</Link></li>
@@ -35,14 +42,14 @@ class Navbar extends Component {
                     <li>
                         <Link to="/basket"
                             onMouseEnter={()=> this.setState({shown: true})}
-                            onMouseLeave={()=> this.setState({shown: false})}
+                            onMouseLeave={()=> setTimeout (() => this.setState({shown: false}), 2000)}
                         >
                             <span>{totalItems}</span>
                             <span className={s.span}>{t("navbar.basket")}</span>
                         </Link>
                         <div className={s.div}>
-                            {this.state.shown && (
-                                <BasketDemo onMouseEnter={()=> this.setState({shown: true})}/>
+                            {(this.state.shown || this.state.stay) && (
+                                <BasketDemo onMouseEnter={this.handleHover} onMouseLeave={this.handleLeave}/>
                             )}
                         </div>
                     </li>
