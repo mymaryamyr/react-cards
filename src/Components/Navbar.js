@@ -42,8 +42,7 @@ class Navbar extends Component {
                         </Link>
                         <div className={s.div}>
                             {this.state.shown && (
-                                <BasketDemo 
-                                />
+                                <BasketDemo onMouseEnter={()=> this.setState({shown: true})}/>
                             )}
                         </div>
                     </li>

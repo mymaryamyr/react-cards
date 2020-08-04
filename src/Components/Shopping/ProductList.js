@@ -39,10 +39,9 @@ class ProductList extends Component {
             filtered = JSON.parse(JSON.stringify(this.state.defaultProduct));
         }
         this.setState({
-            productList: filtered,
+            productList: filtered
         });
     }
-
     render () {
         return (
             <div>
@@ -58,7 +57,7 @@ class ProductList extends Component {
                     <option value="2">2</option>
                     <option value="3">3</option>
                 </select>
-
+            
                 <ul className={styles.ul}>
                     {this.state.productList.map(this.createListItem)}
                 </ul>

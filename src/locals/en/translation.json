@@ -19,7 +19,10 @@
         "discount" : "Discount Code",
         "push" : "Push",
         "final" : "Final Price",
-        "empty" : "Empty the Basket"
+        "empty" : "Empty the Basket",
+        "basket_is_empty" : ".Your basket is empty",
+        "back-to" : "Back to",
+        "shop" : "shop"
     },
     "basketDemo": {
         "image" : "Image",

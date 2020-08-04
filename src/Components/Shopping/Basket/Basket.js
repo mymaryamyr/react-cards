@@ -125,8 +125,8 @@ class Basket extends Component {
         </div>
         :
         <div>
-          <p>سبد خرید شما خالی است.</p>
-          <p>بازگشت به<span><Link to="/listing"> فروشگاه </Link></span></p>
+          <p>{t("basket.basket_is_empty")}</p>
+          <p>{t("basket.back-to")} <span><Link to="/listing">{t("basket.shop")}</Link></span></p>
         </div>
       )
     )
