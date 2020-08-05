@@ -4,9 +4,9 @@ import { connect } from 'react-redux';
 import {
     Link
   } from "react-router-dom";
-import BasketDemo from './Shopping/Basket/Basket.demo';
-import Example from './AutoSuggest';
-import { totalCount } from './store/selectors/basketSelector';
+import BasketDemo from '../Shopping/Basket/Basket.demo';
+import Search from '../Search/AutoSuggest';
+import { totalCount } from '../store/selectors/basketSelector';
 import {  withTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
 
@@ -42,7 +42,7 @@ class Navbar extends Component {
                     <li>
                         <Link to="/basket"
                             onMouseEnter={()=> this.setState({shown: true})}
-                            onMouseLeave={()=> setTimeout (() => this.setState({shown: false}), 2000)}
+                            onMouseLeave={()=> setTimeout (() => this.setState({shown: false}), 1000)}
                         >
                             <span>{totalItems}</span>
                             <span className={s.span}>{t("navbar.basket")}</span>
@@ -54,7 +54,7 @@ class Navbar extends Component {
                         </div>
                     </li>
                 </ul>
-                <Example/>
+                <Search/>
             </div>
     
         )

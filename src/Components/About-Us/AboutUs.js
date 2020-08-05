@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import slideImg from "../img/safron.png"
-import arrowImg from '../img/icon.png'
+import slideImg from "../../img/safron.png"
+import arrowImg from '../../img/icon.png'
 import s from './AboutUs.module.css';
 import {  withTranslation } from "react-i18next";
 import PropTypes from 'prop-types';

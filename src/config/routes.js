@@ -1,9 +1,10 @@
 import Listing from "../Components/Shopping/Listing";
-import AboutUs from "../Components/AboutUs";
+import AboutUs from "../Components/About-Us/AboutUs";
 import Yalda from "../Components/Layouts/landing/Yalda";
 import Basket from "../Components/Shopping/Basket/Basket";
 import Product from "../Components/Shopping/Product";
 import Home from "../Components/Home";
+import PlayGround from "../Components/PlayGround";
 import LoginPage from "../Components/Login/LoginPage";
 import LayoutMain from "../Components/Layouts/LayoutMain";
 import LayoutLanding from "../Components/Layouts/LayoutLanding";
@@ -42,6 +43,11 @@ const routes = [
                 path: "/basket",
                 component: Basket,
                 private: true,
+            },
+            {
+                title: "play",
+                path: "/play",
+                component: PlayGround
             }
         ]
     },

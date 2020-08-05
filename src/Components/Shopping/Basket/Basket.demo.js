@@ -23,7 +23,7 @@ class BasketDemo extends Component {
       if(this.props.onMouseLeave) {
         setTimeout(() => {
           this.props.onMouseLeave(this.state.stay);
-        }, 1000);
+        }, 500);
       }
     })
   }
@@ -80,7 +80,9 @@ BasketDemo.propTypes = {
   totalPrice: PropTypes.number,
   totalCount: PropTypes.number,
   t: PropTypes.func,
-  items: PropTypes.array
+  items: PropTypes.array,
+  onMouseLeave: PropTypes.func,
+  onMouseEnter: PropTypes.func
 }
 
 function mapStateToProps(state) {

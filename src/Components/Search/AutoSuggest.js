@@ -117,7 +117,7 @@ function getSuggestions(value) {
     return section.products;
   }
   
-  class Example extends React.Component {
+  class SearchInput extends React.Component {
     constructor() {
       super();
   
@@ -194,5 +194,5 @@ function getSuggestions(value) {
     }
   }
   
-export default Example;
+export default SearchInput;
   
