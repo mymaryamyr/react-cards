@@ -11,22 +11,6 @@ class BasketDemo extends Component {
   state = {
     stay: false
   }
-  handleHoverDemo = () => {
-    this.setState({stay: true}, () => {
-      if(this.props.onMouseEnter) {
-        this.props.onMouseEnter(this.state.stay);
-      }
-    })
-  }
-  handleLeaveDemo = () => {
-    this.setState({stay: false}, () => {
-      if(this.props.onMouseLeave) {
-        setTimeout(() => {
-          this.props.onMouseLeave(this.state.stay);
-        }, 500);
-      }
-    })
-  }
   render () {
     let { items, totalPrice, totalCount } = this.props;
     const { t } = this.props
@@ -34,8 +18,8 @@ class BasketDemo extends Component {
       (totalCount !== 0 ? 
         <div 
           className={s.div} 
-          onMouseEnter={this.handleHoverDemo} 
-          onMouseLeave={this.handleLeaveDemo}
+          onMouseEnter={this.props.onMouseEnter} 
+          onMouseLeave={this.props.onMouseLeave}
         >
           <table className={s.table}>
             <thead>

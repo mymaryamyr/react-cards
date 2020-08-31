@@ -20,7 +20,7 @@ function ProductCard(props) {
             <p>{t("productCard.name")} : {t("productCard.saffron")}</p>
             <p>{t("productCard.weight")} : {props.product.weight}</p>
             <p>{t("productCard.price")} : {(props.product.price).toLocaleString()}</p>
-            <button onClick={props.onClick} className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>{t("productCard.details")}</Link></button>
+            <button className={s.button}><Link className={s.link} to={'/product/' + props.product.id}>{t("productCard.details")}</Link></button>
             <div className={s.footer}>
                 <img className={s.img} src={props.product.farmer_thumb} alt="farmer in the land"></img>
                 <p className={s.name}>{props.product.farmer_name}</p>

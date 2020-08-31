@@ -17,18 +17,19 @@ class Navbar extends Component {
             shown: false,
         }
     }
-    handleHover = (value) => {
-        this.setState({stay: value});
+    handleHover = () => {
+        this.setState({stay: true});
     }
-    handleLeave = (value) => {
-        this.setState({stay: value});
+    handleLeave = () => {
+        setTimeout(() => {        
+            this.setState({stay: false});
+        }, 500);
     }
     render () {
         const { totalItems, i18n, t } = this.props
         const changeLanguage = lng => {
             i18n.changeLanguage(lng);
         };
-        console.log(this.state)
         return (
             <div className={s.navContainer}>
                 <div className={s.langContainer}>

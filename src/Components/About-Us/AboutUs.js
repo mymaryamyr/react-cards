@@ -16,7 +16,6 @@ class AboutUs extends Component {
         this.setState ({
             active: true
         })
-        console.log(this.state.active)
     }
     render() {
         const activeClass = this.state.active ? s.left : null

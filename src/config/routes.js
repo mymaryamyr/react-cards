@@ -43,11 +43,6 @@ const routes = [
                 path: "/basket",
                 component: Basket,
                 private: true,
-            },
-            {
-                title: "play",
-                path: "/play",
-                component: PlayGround
             }
         ]
     },

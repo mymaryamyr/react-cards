@@ -11,7 +11,7 @@ import './i18n';
 
 ReactDOM.render(
   <Provider store={store}>
-    <Suspense fallback="loading">
+    <Suspense fallback={<div>loading</div>}>
       <App />
     </Suspense>
   </Provider>,

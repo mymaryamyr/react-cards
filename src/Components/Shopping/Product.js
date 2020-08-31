@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {
-    Link,
-} from "react-router-dom";
+import {Link} from "react-router-dom";
 import { connect } from 'react-redux';
 import { addItem } from "../store/actions/index";
 import s from './Card.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import { faTree, faSkullCrossbones } from '@fortawesome/free-solid-svg-icons';
+import { faSync } from '@fortawesome/free-solid-svg-icons';
+import loading from './Loading.module.css'
 import {  withTranslation } from "react-i18next";
 import PropTypes from 'prop-types';
 import { getListing } from './GetListing';
@@ -31,8 +31,7 @@ class Product extends Component {
                 this.setState({
                   isLoaded: true,
                   list: result
-                }), 1000
-              
+                }), 200
             )
         },
           (error) => {
@@ -57,7 +56,7 @@ class Product extends Component {
         if (error) {
             return <div>Error: {error.message}</div>
         } else if (!isLoaded) {
-            return <div>isLoading</div>
+            return <FontAwesomeIcon class={loading.icon} icon={fas, faSync} />
         } else {
             return (
                 <div className={`${s.card} ${s.a}`}> 

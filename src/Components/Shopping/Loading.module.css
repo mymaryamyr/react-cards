@@ -1,10 +1,12 @@
 .icon {
-    position: absolute;
+    display: block;
+    width: 70px;
+    color: #56b68b;
+    margin: auto;
     -webkit-animation:spin 4s linear infinite;
     -moz-animation:spin 4s linear infinite;
     animation:spin 4s linear infinite;
     font-size: 20px;
-    margin: 0 10px;
 }
 @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
 @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }

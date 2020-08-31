@@ -1,0 +1,22 @@
+.container {
+    position: relative;
+    margin: 20px;
+}
+.mapContainer {
+    height: 500px;
+    width: 700px;
+    margin: auto;
+}
+.sidebarStyle {
+    position: absolute;
+    top: 5px;
+    left: 30%;
+    right: 30%;
+    display: inline-block;
+    margin: 12px;
+    background-color: #404040;
+    color: #ffffff;
+    z-index: 1 !important;
+    padding: 6px;
+    font-weight: bold;
+}
